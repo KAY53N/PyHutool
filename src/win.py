@@ -3,8 +3,8 @@ import ctypes.wintypes
 
 from pyautogui import isShiftCharacter
 
-from PyHuTool.Const import _const
-import PyHuTool
+from src.Const import _const
+import src
 
 import sys
 if sys.platform !=  'win32':

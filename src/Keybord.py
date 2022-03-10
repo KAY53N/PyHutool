@@ -2,7 +2,7 @@ import platform
 import sys
 import time
 from contextlib import contextmanager
-from PyHuTool.Const import _const
+from src.Const import _const
 import functools
 from .Mouse import position
 

@@ -4,13 +4,14 @@ import time
 from PIL import ImageGrab
 
 sys.path.append("..")
-from PyHuTool import Mouse
-from PyHuTool import Screenshot
-from PyHuTool import Keybord
+from src import Mouse
+from src import Screenshot
+from src import Keybord
+from src import QRCode
 import pyscreeze
 import pyautogui
 
-# Mouse.click(500, 500)
+Mouse.click(500, 500)
 # x = Mouse.size()
 # x = Mouse.position()
 # Mouse.leftClick(500, 500)
@@ -22,7 +23,7 @@ import pyautogui
 # Keybord.keyUp('x')
 # Keybord.hotkey('enter')
 
-
+# QRCode.createQrcode('test', 'qrcode.png')
 
 
 

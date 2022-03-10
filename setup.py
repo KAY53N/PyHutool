@@ -7,7 +7,7 @@ scriptFolder = os.path.dirname(os.path.realpath(__file__))
 os.chdir(scriptFolder)
 
 # Find version info from module (without importing the module):
-with open('PyHuTool/__init__.py', 'r') as fd:
+with open('src/__init__.py', 'r') as fd:
     version = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]',
                         fd.read(), re.MULTILINE).group(1)
 
@@ -19,13 +19,13 @@ setup(
     name='PyHuTool',
     version=version,
     url='https://github.com/kaysen820/PyHuTool',
-    author='kaysen820',
+    author='kaysen',
     author_email='kaysen820@gmail.com',
     description='PyHuTool lets Python control the mouse and keyboard, and other GUI automation tasks. For Windows, macOS, and Linux',
     long_description=long_description,
     long_description_content_type="text/markdown",
     license='BSD',
-    packages=['PyHuTool'],
+    packages=['src'],
     test_suite='tests',
     install_requires=['pyobjc-core;platform_system=="Darwin"',
                       'pyobjc;platform_system=="Darwin"',

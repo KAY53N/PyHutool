@@ -5,8 +5,8 @@ from Xlib import X
 from Xlib.ext.xtest import fake_input
 import Xlib.XK
 
-from PyHuTool import isShiftCharacter
-from PyHuTool.Const import _const
+from src.Keybord import isShiftCharacter
+from src.Const import _const
 
 BUTTON_NAME_MAPPING = {_const.LEFT: 1, _const.MIDDLE: 2, _const.RIGHT: 3, 1: 1, 2: 2, 3: 3, 4: 4, 5: 5, 6: 6, 7: 7}
 

@@ -1,7 +1,7 @@
 import platform
 import sys
 import time
-from PyHuTool.Const import _const
+from src.Const import _const
 
 if sys.platform == 'darwin':
     from . import osx as _platformModule
