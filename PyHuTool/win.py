@@ -1,5 +1,8 @@
 import ctypes
 import ctypes.wintypes
+
+from pyautogui import isShiftCharacter
+
 from PyHuTool.Const import _const
 import PyHuTool
 
@@ -237,7 +240,7 @@ def _keyDown(key):
     if key not in keyboardMapping or keyboardMapping[key] is None:
         return
 
-    needsShift = PyHuTool.isShiftCharacter(key)
+    needsShift = isShiftCharacter(key)
     mods, vkCode = divmod(keyboardMapping[key], 0x100)
     for apply_mod, vk_mod in [(mods & 4, 0x12), (mods & 2, 0x11),
         (mods & 1 or needsShift, 0x10)]: #HANKAKU not supported! mods & 8
