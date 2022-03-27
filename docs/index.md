@@ -1,8 +1,6 @@
-Examples
-========
+##### Examples
 
-.. code:: python
-
+``` python
 from pyhutool import Mouse
 from pyhutool import Keybord
 from pyhutool import Screenshot
@@ -18,4 +16,4 @@ from pyhutool import QRCode
 # Keybord.hotkey('ctrl', 'c')
 # Keybord.press('h')
 # Keybord.typewrite('hello world')
-.. code:: python
+```
