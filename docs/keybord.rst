@@ -1,5 +1,9 @@
-Examples
-========
+============
+Keybord
+============
+
+keyDown
+-------
 
 .. code:: python
 
@@ -10,3 +14,9 @@ Examples
     >>> Keybord.hotkey('ctrl', 'c')
     >>> Keybord.press('h')
     >>> Keybord.typewrite('hello world')
+
+keyUp
+-------
+
+press
+-------
