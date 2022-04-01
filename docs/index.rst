@@ -3,25 +3,26 @@
 Welcome to PyHuTool's documentation!
 =====================================
 
-Examples
-========
 
-.. code:: python
+The source code is available on: https://github.com/kaysen820/PyHuTool
 
-    >>> from pyhutool import Mouse
-    >>> from pyhutool import Keybord
-    >>> from pyhutool import Screenshot
-    >>> from pyhutool import QRCode
+PyHuTool has several features:
 
-    >>> Mouse.click(500, 500)
-    >>> size = Mouse.size()
-    >>> position = Mouse.position()
-    >>> Mouse.leftClick(500, 500)
+* Moving the mouse and clicking in the windows of other applications.
+* Sending keystrokes to applications (for example, to fill out forms).
+* Take screenshots, and given an image (for example, of a button or checkbox), and find it on the screen.
+* Locate an application's window, and move, resize, maximize, minimize, or close it (Windows-only, currently).
+* Display alert and message boxes.
 
-    >>> Keybord.keyDown('h')
-    >>> Keybord.keyUp('h')
-    >>> Keybord.hotkey('ctrl', 'c')
-    >>> Keybord.press('h')
-    >>> Keybord.typewrite('hello world')
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+   
+   install.rst
+   quickstart.rst
+   mouse.rst
+   keyboard.rst
 
 This example drags the mouse in a square spiral shape in MS Paint (or any graphics drawing program):
