@@ -18,11 +18,12 @@ PyHuTool has several features:
 Contents:
 
 .. toctree::
-   :maxdepth: 2
-   
-   install.rst
-   quickstart.rst
-   mouse.rst
-   keyboard.rst
+    :maxdepth: 2
+    
+    install.rst
+    mouse.rst
+    keyboard.rst
+    
+    source/modules.rst
 
 This example drags the mouse in a square spiral shape in MS Paint (or any graphics drawing program):
