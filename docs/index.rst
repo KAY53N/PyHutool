@@ -7,6 +7,7 @@ Examples
 ========
 
 .. code:: python
+
     >>> from pyhutool import Mouse
     >>> from pyhutool import Keybord
     >>> from pyhutool import Screenshot
@@ -23,3 +24,4 @@ Examples
     >>> Keybord.press('h')
     >>> Keybord.typewrite('hello world')
 
+This example drags the mouse in a square spiral shape in MS Paint (or any graphics drawing program):
