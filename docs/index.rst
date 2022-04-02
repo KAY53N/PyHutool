@@ -23,6 +23,8 @@ Contents:
     install.rst
     mouse.rst
     keyboard.rst
+    clipboard.rst
+    process.rst
     
     source/modules.rst
 
