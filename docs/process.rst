@@ -1,8 +1,8 @@
 ============
-Process
+Process Functions
 ============
 
-Query whether the specified program is running
+Query the running status of the application
 -------
 
 .. code:: python
@@ -12,7 +12,7 @@ Query whether the specified program is running
     >>> Process.checkAppIsOpen('idea.exe')
 
 
-Query the detailed information of the specified process
+Get app details
 -------
 
 .. code:: python

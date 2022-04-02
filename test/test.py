@@ -20,6 +20,7 @@ from pyhutool import Clipboard
 
 # Screenshot.screenshot('test.png')
 # locate = Screenshot.locateOnScreen('img_1.png')
+Screenshot.
 
 # QRCode.createQrcode('test', 'qrcode.png')
 
