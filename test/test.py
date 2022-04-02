@@ -1,7 +1,11 @@
+import sys
+sys.path.append("..")
 from pyhutool import Mouse
 from pyhutool import Keybord
 from pyhutool import Screenshot
 from pyhutool import QRCode
+from pyhutool import Clipboard
+
 
 # Mouse.click(500, 500)
 # size = Mouse.size()
@@ -20,4 +24,5 @@ from pyhutool import QRCode
 # QRCode.createQrcode('test', 'qrcode.png')
 
 
-
+Clipboard.copy('hello world')
+Clipboard.paste()

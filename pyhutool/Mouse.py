@@ -1,7 +1,7 @@
 import platform
 import sys
 import time
-from src.Const import _const
+from pyhutool.Const import _const
 
 if sys.platform == 'darwin':
     from . import Osx as _platformModule
@@ -40,32 +40,21 @@ try:
     def locate(*args, **kwargs):
         return pyscreeze.locate(*args, **kwargs)
 
-    locate.__doc__ = pyscreeze.locate.__doc__
-
     def locateAll(*args, **kwargs):
         return pyscreeze.locateAll(*args, **kwargs)
-
-    locateAll.__doc__ = pyscreeze.locateAll.__doc__
 
     def locateAllOnScreen(*args, **kwargs):
         return pyscreeze.locateAllOnScreen(*args, **kwargs)
 
-    locateAllOnScreen.__doc__ = pyscreeze.locateAllOnScreen.__doc__
-
     def locateCenterOnScreen(*args, **kwargs):
         return pyscreeze.locateCenterOnScreen(*args, **kwargs)
-
-    locateCenterOnScreen.__doc__ = pyscreeze.locateCenterOnScreen.__doc__
 
     def locateOnScreen(*args, **kwargs):
         return pyscreeze.locateOnScreen(*args, **kwargs)
 
-    locateOnScreen.__doc__ = pyscreeze.locateOnScreen.__doc__
-
     def locateOnWindow(*args, **kwargs):
         return pyscreeze.locateOnWindow(*args, **kwargs)
 
-    locateOnWindow.__doc__ = pyscreeze.locateOnWindow.__doc__
 
 
 except ImportError:

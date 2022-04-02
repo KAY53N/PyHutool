@@ -5,58 +5,40 @@ import wmi
 
 def checkAppIsOpen(app_name):
     if sys.platform.startswith('win'):
-        # 如果是Windows系统
         app_name = app_name.lower()
         for app in wmi.WMI().Win32_Process():
             if app.Name.lower() == app_name:
                 return True
         return False
     elif sys.platform.startswith('linux'):
-        # 如果是Linux系统
         for app in os.popen('ps -A'):
             if app_name in app:
                 return True
         return False
     elif sys.platform.startswith('darwin'):
-        # 如果是Mac系统
         for app in os.popen('ps -A'):
             if app_name in app:
                 return True
         return False
 
 
-# 检测进程中的应用程序详细信息，兼容Linux和Windows、Mac
-def checkProcess(process_name):
-    # 如果是Windows系统
+def getProcessDetail(process_name):
     if os.name == 'nt':
-        # 创建WMI连接
         c = wmi.WMI()
-        # 创建系统进程查询
         process_wql = "select * from win32_process where name='%s'" % (process_name)
-        # 执行查询
         process_list = c.query(process_wql)
-        # 返回查询结果
         return process_list
-    # 如果是Linux系统
     elif os.name == 'posix':
-        # 创建系统进程查询
         process_command = "ps -A | grep %s" % (process_name)
-        # 执行查询
         process_list = os.popen(process_command).readlines()
-        # 返回查询结果
         return process_list
-    # 如果是Mac系统
     elif os.name == 'mac':
-        # 创建系统进程查询
         process_command = "ps -A | grep %s" % (process_name)
-        # 执行查询
         process_list = os.popen(process_command).readlines()
-        # 返回查询结果
         return process_list
 
 
-# 根据应用名称查询PID函数，兼容多种系统
-def get_pid_by_name(name):
+def getPidByName(name):
     if name == '':
         return 0
     if os.name == 'nt':
@@ -79,8 +61,7 @@ def get_pid_by_name(name):
         return 0
 
 
-# 根据PID查询应用名称函数，兼容多种系统
-def get_name_by_pid(pid):
+def getNameByPid(pid):
     if pid == 0:
         return ''
     if os.name == 'nt':

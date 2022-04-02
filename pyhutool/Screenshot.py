@@ -5,7 +5,7 @@ import subprocess
 import sys
 import functools
 import time
-from src.Const import _const
+from pyhutool.Const import _const
 
 try:
     from PIL import Image

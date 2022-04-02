@@ -3,8 +3,8 @@ import os
 import subprocess
 import time
 import sys
-from src.Keybord import isShiftCharacter
-from src.Const import _const
+from pyhutool.Keybord import isShiftCharacter
+from pyhutool.Const import _const
 
 try:
     import Quartz

@@ -4,9 +4,9 @@ import subprocess
 import sys
 import time
 from contextlib import contextmanager
-from src.Const import _const
+from pyhutool.Const import _const
 import functools
-from .Mouse import position
+from pyhutool import Mouse
 
 if sys.platform.startswith("java"):
     raise NotImplementedError("Jython is not yet supported by PyHuTool.")
@@ -234,7 +234,7 @@ def openTerminal():
 
 
 def failSafeCheck():
-    if FAILSAFE and tuple(position()) in FAILSAFE_POINTS:
+    if FAILSAFE and tuple(Mouse.position()) in FAILSAFE_POINTS:
         raise Exception(
             "PyHuTool fail-safe triggered from mouse moving to a corner of the screen. To disable this fail-safe, set PyHuTool.FAILSAFE to False. DISABLING FAIL-SAFE IS NOT RECOMMENDED."
         )
