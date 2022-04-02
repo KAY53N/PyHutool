@@ -24,7 +24,7 @@ Contents:
     
     install.rst
     mouse.rst
-    keyboard.rst
+    keybord.rst
     clipboard.rst
     process.rst
     
