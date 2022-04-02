@@ -13,6 +13,8 @@ PyHuTool has several features:
 * Take screenshots, and given an image (for example, of a button or checkbox), and find it on the screen.
 * Locate an application's window, and move, resize, maximize, minimize, or close it (Windows-only, currently).
 * Display alert and message boxes.
+* Support calling the clipboard of the system to achieve copy and paste operations
+* Supports querying the process details of the current operating system
 
 
 Contents:
