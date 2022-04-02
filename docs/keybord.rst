@@ -13,7 +13,7 @@ For example:
 
 The press(), keyDown(), and keyUp() Functions
 =============================
-To press these keys, call the press() function and pass it a string from the pyautogui.KEYBOARD_KEYS such as enter, esc, f1
+To press these keys, call the press() function and pass it a string from the pyhutool.KEYBOARD_KEYS such as enter, esc, f1
 For example:
 .. code:: python
 

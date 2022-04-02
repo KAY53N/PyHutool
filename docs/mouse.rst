@@ -27,9 +27,9 @@ For example:
 
 .. code:: python
 
-    >>> pyautogui.size()
+    >>> pyhutool.size()
     (1920, 1080)
-    >>> pyautogui.position()
+    >>> pyhutool.position()
     (187, 567)
 
 
