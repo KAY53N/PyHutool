@@ -1,4 +1,6 @@
+import os
 import platform
+import subprocess
 import sys
 import time
 from contextlib import contextmanager
@@ -9,11 +11,11 @@ from .Mouse import position
 if sys.platform.startswith("java"):
     raise NotImplementedError("Jython is not yet supported by PyHuTool.")
 elif sys.platform == "darwin":
-    from . import osx as platformModule
+    from . import Osx as platformModule
 elif sys.platform == "win32":
-    from . import win as platformModule
+    from . import Win as platformModule
 elif platform.system() == "Linux":
-    from . import x11 as platformModule
+    from . import X11 as platformModule
 else:
     raise NotImplementedError("Your platform (%s) is not supported by PyHuTool." % (platform.system()))
 
@@ -140,6 +142,95 @@ def hotkey(*args, **kwargs):
             c = c.lower()
         platformModule._keyUp(c)
         time.sleep(interval)
+
+
+@_genericPyAutoGUIChecks
+def openVirtualKeybord():
+    if platform.system() == "Windows":
+        cmd = 'osk'
+    elif platform.system() == "Linux":
+        cmd = 'xinput'
+    else:
+        cmd = 'osk'
+    p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+    out, err = p.communicate()
+    out = out.decode('utf-8')
+    err = err.decode('utf-8')
+    if err:
+        return err
+    else:
+        return out
+
+
+@_genericPyAutoGUIChecks
+def openNotepad():
+    if platform.system() == "Windows":
+        cmd = 'notepad'
+    elif platform.system() == "Linux":
+        cmd = 'gedit'
+    else:
+        cmd = 'notepad'
+    p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+    out, err = p.communicate()
+    out = out.decode('utf-8')
+    err = err.decode('utf-8')
+    if err:
+        return err
+    else:
+        return out
+
+
+@_genericPyAutoGUIChecks
+def openRegedit():
+    if platform.system() == "Windows":
+        cmd = 'regedit'
+    else:
+        cmd = 'notepad'
+    p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+    out, err = p.communicate()
+    out = out.decode('utf-8')
+    err = err.decode('utf-8')
+    if err:
+        return err
+    else:
+        return out
+
+
+@_genericPyAutoGUIChecks
+def openApp(apppath):
+    if platform.system() == "Windows":
+        cmd = 'start ' + apppath
+    elif platform.system() == "Linux":
+        cmd = 'xdg-open ' + apppath
+    else:
+        cmd = 'open ' + apppath
+    p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+    out, err = p.communicate()
+    out = out.decode('utf-8')
+    err = err.decode('utf-8')
+    if err:
+        return err
+    else:
+        return out
+
+
+# 打开终端，兼容Windows和Linux与MacOS
+@_genericPyAutoGUIChecks
+def openTerminal():
+    if platform.system() == "Windows":
+        cmd = 'cmd'
+    elif platform.system() == "Linux":
+        cmd = 'gnome-terminal'
+    else:
+        cmd = 'open -a Terminal'
+    p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+    out, err = p.communicate()
+    out = out.decode('utf-8')
+    err = err.decode('utf-8')
+    if err:
+        return err
+    else:
+        return out
 
 
 def failSafeCheck():

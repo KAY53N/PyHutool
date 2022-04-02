@@ -1,9 +1,5 @@
-import sys
-import os
-import time
-import datetime
 import qrcode
-import hashlib
+
 
 def createQrcode(content, file_path):
     qr = qrcode.QRCode(

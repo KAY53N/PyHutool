@@ -4,11 +4,11 @@ import time
 from src.Const import _const
 
 if sys.platform == 'darwin':
-    from . import osx as _platformModule
+    from . import Osx as _platformModule
 elif sys.platform == 'win32':
-    from . import win as _platformModule
+    from . import Win as _platformModule
 elif platform.system() == 'Linux':
-    from . import x11 as _platformModule
+    from . import X11 as _platformModule
 else:
     raise NotImplementedError('Your platform (%s) is not supported by PyHutool.' % (platform.system()))
 

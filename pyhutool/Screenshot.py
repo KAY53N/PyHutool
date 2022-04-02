@@ -60,6 +60,7 @@ def _screenshot_win32(imageFilename=None, region=None):
         im.save(imageFilename)
     return im
 
+
 def _screenshot_osx(imageFilename=None, region=None):
     if imageFilename is None:
         tmpFilename = 'screenshot%s.png' % (datetime.datetime.now().strftime('%Y-%m%d_%H-%M-%S-%f'))
