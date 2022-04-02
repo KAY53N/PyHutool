@@ -3,7 +3,7 @@ Screenshot Functions
 ============
 
 The screenshot() Function
--------
+=============================
 Calling screenshot() will return an Image object (see the Pillow or PIL module documentation for details). Passing a string of a filename will save the screenshot to a file as well as return it as an Image object.
 .. code:: python
 
@@ -13,7 +13,7 @@ Calling screenshot() will return an Image object (see the Pillow or PIL module d
 
 
 The Locate Functions
--------
+=============================
 Find coordinates in the screen based on the feature image
 .. code:: python
 

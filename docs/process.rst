@@ -3,7 +3,7 @@ Process Functions
 ============
 
 Query the running status of the application
--------
+=============================
 
 .. code:: python
 
@@ -13,7 +13,7 @@ Query the running status of the application
 
 
 Get app details
--------
+=============================
 
 .. code:: python
 
@@ -23,7 +23,7 @@ Get app details
 
 
 Get PID based on process name, or get process name based on PID
--------
+=============================
 
 .. code:: python
 

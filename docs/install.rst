@@ -9,7 +9,7 @@ To install pyhutool, install the `pyhutool` package from PyPI by running `pip in
 OS-specific instructions are below.
 
 Windows
--------
+=============================
 
 On Windows, you can use the ``py.exe`` program to run the latest version of Python:
 
@@ -22,7 +22,7 @@ If you have multiple versions of Python installed, you can select which one with
 (This is the same as running ``pip install pyhutool``.)
 
 macOS
------
+=============================
 
 On macOS and Linux, you need to run ``python3``:
 
@@ -33,7 +33,7 @@ If you are running El Capitan and have problems installing pyobjc try:
     ``MACOSX_DEPLOYMENT_TARGET=10.11 pip install pyobjc``
 
 Linux
------
+=============================
 
 On macOS and Linux, you need to run ``python3``:
 

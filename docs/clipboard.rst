@@ -1,9 +1,9 @@
 ============
-Clipboard
+Clipboard Control Functions
 ============
 
 copy / paste
--------
+=============================
 
 Invoke the copy and paste functions of the system clipboard
 
