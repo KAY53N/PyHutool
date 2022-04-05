@@ -1,10 +1,7 @@
 import ctypes
 import ctypes.wintypes
-
-from pyautogui import isShiftCharacter
-
-from src.Const import _const
-import src
+from pyhutool.gui.Keybord import isShiftCharacter
+from pyhutool.gui.Const import _const
 
 import sys
 if sys.platform !=  'win32':

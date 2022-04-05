@@ -26,10 +26,10 @@ The screen resolution size is returned by the ``size()`` function as a tuple of 
 For example:
 
 .. code:: python
-
-    >>> pyhutool.size()
+    >>> from pyhutool import gui
+    >>> gui.size()
     (1920, 1080)
-    >>> pyhutool.position()
+    >>> gui.position()
     (187, 567)
 
 
@@ -38,9 +38,9 @@ Mouse Clicks
 
 .. code:: python
 
-    >>> from pyhutool import Mouse
-    >>> Mouse.click(500, 500)
-    >>> size = Mouse.size()
-    >>> position = Mouse.position()
-    >>> Mouse.leftClick(500, 500)
+    >>> from pyhutool import gui
+    >>> gui.click(500, 500)
+    >>> size = gui.size()
+    >>> position = gui.position()
+    >>> gui.leftClick(500, 500)
 

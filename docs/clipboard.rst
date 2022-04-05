@@ -9,7 +9,7 @@ Invoke the copy and paste functions of the system clipboard
 
 .. code:: python
 
-    >>> from pyhutool import Clipboard
+    >>> from pyhutool.system import Clipboard
 
     >>> Clipboard.copy('hello world')
     >>> Clipboard.paste()

@@ -1,21 +1,22 @@
-import os
+# -*- coding: utf-8 -*-
 import platform
 import subprocess
 import sys
 import time
 from contextlib import contextmanager
-from pyhutool.Const import _const
+
+import pyhutool
+from pyhutool.gui.Const import _const
 import functools
-from pyhutool import Mouse
 
 if sys.platform.startswith("java"):
     raise NotImplementedError("Jython is not yet supported by PyHuTool.")
 elif sys.platform == "darwin":
-    from . import Osx as platformModule
+    from pyhutool.gui import Osx as platformModule
 elif sys.platform == "win32":
-    from . import Win as platformModule
+    from pyhutool.gui import Win as platformModule
 elif platform.system() == "Linux":
-    from . import X11 as platformModule
+    from pyhutool import X11 as platformModule
 else:
     raise NotImplementedError("Your platform (%s) is not supported by PyHuTool." % (platform.system()))
 
@@ -35,16 +36,6 @@ FAILSAFE_POINTS = [(0, 0)]
 def isShiftCharacter(character):
     return character.isupper() or character in set('~!@#$%^&*()_+{}|:"<>?')
 
-
-def _genericPyAutoGUIChecks(wrappedFunction):
-    @functools.wraps(wrappedFunction)
-    def wrapper(*args, **kwargs):
-        returnVal = wrappedFunction(*args, **kwargs)
-        _handlePause(kwargs.get("_pause", True))
-        return returnVal
-    return wrapper
-
-
 def _handlePause(_pause):
     if _pause:
         assert isinstance(_const.PAUSE, int) or isinstance(_const.PAUSE, float)
@@ -54,23 +45,21 @@ def _handlePause(_pause):
 def isValidKey(key):
     return platformModule.keyboardMapping.get(key, None) != None
 
+def keyDown(fn):
+    def func(key, *args, **kwargs):
+        if len(key) > 1:
+            key = key.lower()
+        platformModule._keyDown(key)
+    return func
 
-@_genericPyAutoGUIChecks
-def keyDown(key, _pause=True):
-    if len(key) > 1:
-        key = key.lower()
-    platformModule._keyDown(key)
-
-
-@_genericPyAutoGUIChecks
 def keyUp(key, _pause=True):
-    if len(key) > 1:
-        key = key.lower()
-    platformModule._keyUp(key)
-
+    def func(key, *args, **kwargs):
+        if len(key) > 1:
+            key = key.lower()
+        platformModule._keyUp(key)
+    return func
 
 @contextmanager
-@_genericPyAutoGUIChecks
 def hold(keys, logScreenshot=None, _pause=True):
     if type(keys) == str:
         if len(keys) > 1:
@@ -85,66 +74,76 @@ def hold(keys, logScreenshot=None, _pause=True):
                 lowerKeys.append(s)
         keys = lowerKeys
     for k in keys:
-        failSafeCheck()
         platformModule._keyDown(k)
     try:
         yield
     finally:
         for k in keys:
-            failSafeCheck()
             platformModule._keyUp(k)
 
 
-@_genericPyAutoGUIChecks
-def press(keys, presses=1, interval=0.0, _pause=True):
-    if type(keys) == str:
-        if len(keys) > 1:
-            keys = keys.lower()
-        keys = [keys] # If keys is 'enter', convert it to ['enter'].
-    else:
-        lowerKeys = []
-        for s in keys:
-            if len(s) > 1:
-                lowerKeys.append(s.lower())
-            else:
-                lowerKeys.append(s)
-        keys = lowerKeys
-    interval = float(interval)
-    for i in range(presses):
-        for k in keys:
-            failSafeCheck()
-            platformModule._keyDown(k)
-            platformModule._keyUp(k)
-        time.sleep(interval)
+def press(fn):
+    def func(*args, **kwargs):
+        params = dict(zip(fn.__code__.co_varnames, [None] * fn.__code__.co_argcount))
+        params['presses'],params['interval'],params['_pause'] = fn.__defaults__
+        params.update(kwargs)
+        for k,v in enumerate(args):
+            params[fn.__code__.co_varnames[k]] = v
+        keys = params['keys']
+        if type(keys) == str:
+            if len(keys) > 1:
+                keys = keys.lower()
+            keys = [keys] # If keys is 'enter', convert it to ['enter'].
+        else:
+            lowerKeys = []
+            for s in keys:
+                if len(s) > 1:
+                    lowerKeys.append(s.lower())
+                else:
+                    lowerKeys.append(s)
+            keys = lowerKeys
+        interval = float(params['interval'])
+        print(params)
+        for i in range(params['presses']):
+            for k in keys:
+                platformModule._keyDown(k)
+                platformModule._keyUp(k)
+            time.sleep(interval)
+    return func
 
 
-@_genericPyAutoGUIChecks
-def typewrite(message, interval=0.0, _pause=True):
-    interval = float(interval)  # TODO - this should be taken out.
-    for c in message:
-        if len(c) > 1:
-            c = c.lower()
-        press(c, _pause=False)
-        time.sleep(interval)
-        failSafeCheck()
+def typewrite(fn):
+    def func(*args, **kwargs):
+        message = args[0]
+        params = dict(zip(fn.__code__.co_varnames, [None] * fn.__code__.co_argcount))
+        params['interval'],_pause = fn.__defaults__
+        params.update(kwargs)
+        interval = float(params['interval'])
+        for c in message:
+            if len(c) > 1:
+                c = c.lower()
+            pyhutool.gui.press(c, _pause=False)
+            time.sleep(interval)
+    return func
 
 
-@_genericPyAutoGUIChecks
 def hotkey(*args, **kwargs):
-    interval = float(kwargs.get("interval", 0.0))  # TODO - this should be taken out.
-    for c in args:
-        if len(c) > 1:
-            c = c.lower()
-        platformModule._keyDown(c)
-        time.sleep(interval)
-    for c in reversed(args):
-        if len(c) > 1:
-            c = c.lower()
-        platformModule._keyUp(c)
-        time.sleep(interval)
+    def func(*args, **kwargs):
+        interval = float(kwargs.get("interval", 0.1))  # TODO - this should be taken out.
+        for c in args:
+            if len(c) > 1:
+                c = c.lower()
+            print(c)
+            platformModule._keyDown(c)
+            time.sleep(interval)
+        for c in reversed(args):
+            if len(c) > 1:
+                c = c.lower()
+            platformModule._keyUp(c)
+            time.sleep(interval)
+    return func
 
 
-@_genericPyAutoGUIChecks
 def openVirtualKeybord():
     if platform.system() == "Windows":
         cmd = 'osk'
@@ -162,7 +161,6 @@ def openVirtualKeybord():
         return out
 
 
-@_genericPyAutoGUIChecks
 def openNotepad():
     if platform.system() == "Windows":
         cmd = 'notepad'
@@ -180,7 +178,6 @@ def openNotepad():
         return out
 
 
-@_genericPyAutoGUIChecks
 def openRegedit():
     if platform.system() == "Windows":
         cmd = 'regedit'
@@ -196,7 +193,6 @@ def openRegedit():
         return out
 
 
-@_genericPyAutoGUIChecks
 def openApp(apppath):
     if platform.system() == "Windows":
         cmd = 'start ' + apppath
@@ -212,29 +208,3 @@ def openApp(apppath):
         return err
     else:
         return out
-
-
-# 打开终端，兼容Windows和Linux与MacOS
-@_genericPyAutoGUIChecks
-def openTerminal():
-    if platform.system() == "Windows":
-        cmd = 'cmd'
-    elif platform.system() == "Linux":
-        cmd = 'gnome-terminal'
-    else:
-        cmd = 'open -a Terminal'
-    p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
-    out, err = p.communicate()
-    out = out.decode('utf-8')
-    err = err.decode('utf-8')
-    if err:
-        return err
-    else:
-        return out
-
-
-def failSafeCheck():
-    if FAILSAFE and tuple(Mouse.position()) in FAILSAFE_POINTS:
-        raise Exception(
-            "PyHuTool fail-safe triggered from mouse moving to a corner of the screen. To disable this fail-safe, set PyHuTool.FAILSAFE to False. DISABLING FAIL-SAFE IS NOT RECOMMENDED."
-        )

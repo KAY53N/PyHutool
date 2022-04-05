@@ -7,7 +7,10 @@ Query the running status of the application
 
 .. code:: python
 
-    >>> from pyhutool import Process
+
+from pyhutool.process import Process
+
+    >>> Process.checkAppIsOpen('idea.exe')
 
     >>> Process.checkAppIsOpen('idea.exe')
 

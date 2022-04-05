@@ -1,5 +1,6 @@
 import ctypes
 import platform
+import subprocess
 
 from win32con import SM_CMONITORS
 from win32api import GetSystemMetrics
@@ -27,3 +28,20 @@ def keyboardLangIsEN():
     if lid_hex == '0x409':
         return True
     return False
+
+
+def openTerminal():
+    if platform.system() == "Windows":
+        cmd = 'cmd'
+    elif platform.system() == "Linux":
+        cmd = 'gnome-terminal'
+    else:
+        cmd = 'open -a Terminal'
+    p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+    out, err = p.communicate()
+    out = out.decode('utf-8')
+    err = err.decode('utf-8')
+    if err:
+        return err
+    else:
+        return out

@@ -37,7 +37,7 @@ Linux
 
 On macOS and Linux, you need to run ``python3``:
 
-    ``python3 -m pip install pyautogui``
+    ``python3 -m pip install pyhutool``
 
 On Linux, additionally you need to install the ``scrot`` application, as well as Tkinter:
 

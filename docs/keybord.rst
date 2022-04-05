@@ -8,8 +8,8 @@ The primary keyboard function is write(). This function will type the characters
 For example:
 .. code:: python
 
-    >>> from pyhutool import Keybord
-    >>> Keybord.write('hello world')
+    >>> from pyhutool import gui
+    >>> gui.write('hello world')
 
 The press(), keyDown(), and keyUp() Functions
 =============================
@@ -17,13 +17,13 @@ To press these keys, call the press() function and pass it a string from the pyh
 For example:
 .. code:: python
 
-    >>> Keybord.keyDown('h')
-    >>> Keybord.keyUp('h')
-    >>> Keybord.press('enter')
+    >>> gui.keyDown('h')
+    >>> gui.keyUp('h')
+    >>> gui.press('enter')
 
 The hotkey() Function
 =============================
 To make pressing hotkeys or keyboard shortcuts convenient, the hotkey() can be passed several key strings which will be pressed down in order, and then released in reverse order. This code:
 .. code:: python
 
-    >>> Keybord.hotkey('ctrl', 'shift', 'esc')
+    >>> gui.hotkey('ctrl', 'shift', 'esc')
