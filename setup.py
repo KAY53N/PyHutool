@@ -16,12 +16,12 @@ with io.open("README.md", encoding="utf-8") as fileObj:
     long_description = fileObj.read()
 
 setup(
-    name='PyHuTool',
+    name='PyHutool',
     version=version,
     url='https://github.com/kaysen820/PyHuTool',
     author='kaysen',
     author_email='kaysen820@gmail.com',
-    description='PyHuTool lets Python control the mouse and keyboard, and other GUI automation tasks. For Windows, macOS, and Linux',
+    description='PyHutool lets Python control the mouse and keyboard, and other GUI automation tasks. For Windows, macOS, and Linux',
     long_description=long_description,
     long_description_content_type="text/markdown",
     license='BSD',

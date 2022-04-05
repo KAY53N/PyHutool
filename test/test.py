@@ -1,20 +1,17 @@
 import sys
 sys.path.append("..")
-from pyhutool import Mouse
-from pyhutool import Keybord
-from pyhutool import Screenshot
+from pyhutool import gui
+from pyhutool.gui import Screenshot
 from pyhutool import QRCode
-from pyhutool import Clipboard
+import qrcode
 
-
-# Mouse.click(500, 500)
-# size = Mouse.size()
-# position = Mouse.position()
-# Mouse.leftClick(500, 500)
-
-# Keybord.keyDown('h')
-# Keybord.keyUp('h')
-# Keybord.hotkey('ctrl', 'c')
+# gui.click(111, 500, interval=2.2)
+# size = gui.size()
+# position = gui.position()
+# gui.leftClick(100, 500)
+# gui.keyDown('h')
+# gui.keyUp('h')
+# gui.hotKey('ctrl', 'c')
 # Keybord.press('h')
 # Keybord.typewrite('hello world')
 
@@ -24,5 +21,10 @@ from pyhutool import Clipboard
 # QRCode.createQrcode('test', 'qrcode.png')
 
 
-Clipboard.copy('hello world')
-Clipboard.paste()
+# Clipboard.copy('hello world')
+# Clipboard.paste()
+
+# xx = Core.Io.tail('log.log', 50)
+# for x in xx:
+#     print(x)
+
