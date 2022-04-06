@@ -2,7 +2,7 @@
 System Control Functions
 ============
 
-copy / paste
+Copy / Paste
 =============================
 
 Invoke the copy and paste functions of the system clipboard
