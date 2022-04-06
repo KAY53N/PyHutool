@@ -18,7 +18,6 @@ Full documentation available at https://pyhutool.readthedocs.org
 
 
 ## 🛠️包含组件
-一个Java基础工具类，对文件、流、加密解密、转码、正则、线程、XML等JDK方法进行封装，组成各种Util工具类，同时提供以下组件：
 
 | 模块                | 介绍                                      |
 | -------------------|-----------------------------------------|
