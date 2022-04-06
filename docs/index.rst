@@ -27,6 +27,4 @@ Contents:
     gui.rst
     system.rst
 
-    source/modules.rst
-
 This example drags the mouse in a square spiral shape in MS Paint (or any graphics drawing program):
