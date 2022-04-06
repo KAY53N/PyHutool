@@ -1,6 +1,6 @@
 import ctypes
 import ctypes.wintypes
-from pyhutool.gui.Keybord import isShiftCharacter
+from pyhutool.gui.Keyboard import isShiftCharacter
 from pyhutool.gui.Const import _const
 
 import sys

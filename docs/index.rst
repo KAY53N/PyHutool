@@ -23,11 +23,9 @@ Contents:
     :maxdepth: 2
     
     install.rst
-    mouse.rst
-    keybord.rst
-    clipboard.rst
-    process.rst
-    
+    gui.rst
+    system.rst
+    core.rst
     source/modules.rst
 
 This example drags the mouse in a square spiral shape in MS Paint (or any graphics drawing program):

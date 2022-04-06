@@ -1,6 +1,6 @@
 import time
 import sys
-from pyhutool.gui.Keybord import isShiftCharacter
+from pyhutool.gui.Keyboard import isShiftCharacter
 from pyhutool.gui.Const import _const
 
 try:

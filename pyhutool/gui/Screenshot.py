@@ -61,33 +61,27 @@ def _screenshot_win32(imageFilename=None, region=None):
     return im
 
 
-def _screenshot_osx(fn):
-    def func(*args, **kwargs):
-        imageFilename = args[0]
-        region = None
-        if len(args) > 1:
-            region = args[1]
-        if imageFilename is None:
-            tmpFilename = 'screenshot%s.png' % (datetime.datetime.now().strftime('%Y-%m%d_%H-%M-%S-%f'))
-        else:
-            tmpFilename = imageFilename
-        subprocess.call(['screencapture', '-x', tmpFilename])
-        im = Image.open(tmpFilename)
+def _screenshot_osx(imageFilename=None, region=None):
+    if imageFilename is None:
+        tmpFilename = 'screenshot%s.png' % (datetime.datetime.now().strftime('%Y-%m%d_%H-%M-%S-%f'))
+    else:
+        tmpFilename = imageFilename
+    subprocess.call(['screencapture', '-x', tmpFilename])
+    im = Image.open(tmpFilename)
 
-        if region is not None:
-            assert len(region) == 4, 'region argument must be a tuple of four ints'
-            region = [int(x) for x in region]
-            im = im.crop((region[0], region[1], region[2] + region[0], region[3] + region[1]))
-            os.unlink(tmpFilename) # delete image of entire screen to save cropped version
-            im.save(tmpFilename)
-        else:
-            # force loading before unlinking, Image.open() is lazy
-            im.load()
+    if region is not None:
+        assert len(region) == 4, 'region argument must be a tuple of four ints'
+        region = [int(x) for x in region]
+        im = im.crop((region[0], region[1], region[2] + region[0], region[3] + region[1]))
+        os.unlink(tmpFilename) # delete image of entire screen to save cropped version
+        im.save(tmpFilename)
+    else:
+        # force loading before unlinking, Image.open() is lazy
+        im.load()
 
-        if imageFilename is None:
-            os.unlink(tmpFilename)
-        return im
-    return func
+    if imageFilename is None:
+        os.unlink(tmpFilename)
+    return im
 
 def _screenshot_linux(scrotExists=False, imageFilename=None, region=None):
     if not scrotExists:
@@ -238,29 +232,33 @@ def locate(needleImage, haystackImage, **kwargs):
             return None
 
 
-def locateOnScreen(fn):
-    def func(image, minSearchTime=0, **kwargs):
-        start = time.time()
-        while True:
+def locateOnScreen(image, minSearchTime=0, **kwargs):
+    """TODO - rewrite this
+    minSearchTime - amount of time in seconds to repeat taking
+    screenshots and trying to locate a match.  The default of 0 performs
+    a single search.
+    """
+    start = time.time()
+    while True:
+        try:
+            screenshotIm = screenshot(region=None) # the locateAll() function must handle cropping to return accurate coordinates, so don't pass a region here.
+            retVal = locate(image, screenshotIm, **kwargs)
             try:
-                screenshotIm = screenshot(region=None) # the locateAll() function must handle cropping to return accurate coordinates, so don't pass a region here.
-                retVal = locate(image, screenshotIm, **kwargs)
-                try:
-                    screenshotIm.fp.close()
-                except AttributeError:
-                    # Screenshots on Windows won't have an fp since they came from
-                    # ImageGrab, not a file. Screenshots on Linux will have fp set
-                    # to None since the file has been unlinked
-                    pass
-                if retVal or time.time() - start > minSearchTime:
-                    return retVal
-            except:
-                if time.time() - start > minSearchTime:
-                    if _const.USE_IMAGE_NOT_FOUND_EXCEPTION:
-                        raise
-                    else:
-                        return None
-    return func
+                screenshotIm.fp.close()
+            except AttributeError:
+                # Screenshots on Windows won't have an fp since they came from
+                # ImageGrab, not a file. Screenshots on Linux will have fp set
+                # to None since the file has been unlinked
+                pass
+            if retVal or time.time() - start > minSearchTime:
+                return retVal
+        except:
+            if time.time() - start > minSearchTime:
+                if _const.USE_IMAGE_NOT_FOUND_EXCEPTION:
+                    raise
+                else:
+                    return None
+
 
 def _kmp(needle, haystack, _dummy):
     shifts = [1] * (len(needle) + 1)

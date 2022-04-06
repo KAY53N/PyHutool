@@ -1,12 +1,30 @@
 import sys
 sys.path.append("..")
-from pyhutool import gui
+from pyhutool.gui import Mouse
+from pyhutool.gui import Keyboard
 from pyhutool.gui import Screenshot
 from pyhutool import QRCode
 import qrcode
 from pyhutool.system import Clipboard
+from pyhutool.system import Process
+from pyhutool.system import Window
+from pyhutool.system import System
 
-# gui.click(111, 500, interval=2.2)
+
+System.info()
+x = System.metrics()
+print(x)
+System.openTerminal()
+System.keyboardLangIsEN()
+System.cmonitorsCount()
+
+# Window.get_window_title()
+# Window.get_active_window_title()
+
+# Process.getProcessDetail('idea.exe')
+# Process.getNameByPid(1234)
+# Process.checkAppIsOpen("chrome")
+# Mouse.click(111, 500, interval=2.2)
 # size = gui.size()
 # position = gui.position()
 # gui.leftClick(100, 500)
