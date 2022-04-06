@@ -37,22 +37,26 @@ Window Function
 System Function
 =============================
 Get the current window title
+
 .. code:: python
 
     >>> Window.get_window_title()
     >>> Window.get_active_window_title()
 
 Get system information
+
 .. code:: python
 
     >>> System.info()
 
 Get the current screen resolution
+
 .. code:: python
 
     >>> System.metrics()
 
-open terminal
+Open terminal
+
 .. code:: python
 
     >>> System.openTerminal()
@@ -63,6 +67,7 @@ Get the number of monitors
     >>> System.cmonitorsCount()
 
 Check if the current input method is English
+
 .. code:: python
 
     >>> System.keyboardLangIsEN()

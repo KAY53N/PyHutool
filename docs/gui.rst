@@ -26,6 +26,7 @@ The screen resolution size is returned by the ``size()`` function as a tuple of 
 For example:
 
 .. code:: python
+
     >>> from pyhutool.gui import Mouse
 
     >>> Mouse.size()
@@ -51,6 +52,7 @@ The write() Function
 =============================
 The primary keyboard function is write(). This function will type the characters in the string that is passed. To add a delay interval in between pressing each character key, pass an int or float for the interval keyword argument.
 For example:
+
 .. code:: python
 
     >>> from pyhutool.gui import Keyboard
@@ -61,6 +63,7 @@ The press(), keyDown(), and keyUp() Functions
 =============================
 To press these keys, call the press() function and pass it a string from the pyhutool.KEYBOARD_KEYS such as enter, esc, f1
 For example:
+
 .. code:: python
 
     >>> from pyhutool.gui import Keyboard
@@ -72,6 +75,7 @@ For example:
 The hotkey() Function
 =============================
 To make pressing hotkeys or keyboard shortcuts convenient, the hotkey() can be passed several key strings which will be pressed down in order, and then released in reverse order. This code:
+
 .. code:: python
 
     >>> from pyhutool.gui import Keyboard
@@ -82,6 +86,7 @@ To make pressing hotkeys or keyboard shortcuts convenient, the hotkey() can be p
 The screenshot() Function
 =============================
 Calling screenshot() will return an Image object (see the Pillow or PIL module documentation for details). Passing a string of a filename will save the screenshot to a file as well as return it as an Image object.
+
 .. code:: python
 
     >>> from pyhutool.gui import Screenshot
@@ -95,6 +100,7 @@ Calling screenshot() will return an Image object (see the Pillow or PIL module d
 The Locate Functions
 =============================
 Find coordinates in the screen based on the feature image
+
 .. code:: python
 
     >>> from pyhutool.gui import Screenshot
