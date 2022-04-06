@@ -36,14 +36,33 @@ Window Function
 
 System Function
 =============================
+Get the current window title
 .. code:: python
 
-    >>> from pyhutool.system import Window
-    >>> Window.get_window_title() # 获取当前窗口标题
-    >>> Window.get_active_window_title() # 获取当前活动窗口标题
+    >>> Window.get_window_title()
+    >>> Window.get_active_window_title()
 
-    >>> System.info() # 获取系统信息
-    >>> System.metrics() # 获取当前屏幕分辨率
-    >>> System.openTerminal() # 打开终端
-    >>> System.keyboardLangIsEN() # 检查当前输入法是否为英文
-    >>> System.cmonitorsCount() # 获取显示器数量
+Get system information
+.. code:: python
+
+    >>> System.info()
+
+Get the current screen resolution
+.. code:: python
+
+    >>> System.metrics()
+
+open terminal
+.. code:: python
+
+    >>> System.openTerminal()
+
+Get the number of monitors
+.. code:: python
+
+    >>> System.cmonitorsCount()
+
+Check if the current input method is English
+.. code:: python
+
+    >>> System.keyboardLangIsEN()

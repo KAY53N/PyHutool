@@ -31,16 +31,6 @@ class Zip:
         zip_file.extract(file_name, file_path)
         zip_file.close()
 
-    # 压缩文件夹方法
-    @staticmethod
-    def zip_dir(dir_path, zip_path):
-        import zipfile
-        zip_file = zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED)
-        for root, dirs, files in os.walk(dir_path):
-            for file in files:
-                zip_file.write(os.path.join(root, file))
-        zip_file.close()
-
     # 解压缩文件夹方法
     @staticmethod
     def unzip_dir(zip_path, dir_path):

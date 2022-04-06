@@ -10,13 +10,10 @@ from pyhutool.system import Process
 from pyhutool.system import Window
 from pyhutool.system import System
 
+from pyhutool.core import Date
 
-System.info()
-x = System.metrics()
-print(x)
-System.openTerminal()
-System.keyboardLangIsEN()
-System.cmonitorsCount()
+
+
 
 # Window.get_window_title()
 # Window.get_active_window_title()
