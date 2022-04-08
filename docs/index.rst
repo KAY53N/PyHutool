@@ -21,7 +21,7 @@ Contents:
 
 .. toctree::
     :maxdepth: 2
-    
+
     install.rst
     core.rst
     gui.rst
