@@ -4,7 +4,6 @@ python:
 install:
     - pip install poetry
     - pip install pytest
-    - poetry install
 env:
   - test_run1=tests/test_tool.py
 script:
