@@ -7,4 +7,4 @@ install:
 env:
   - test_run1=tests/test_tool.py
 script:
-  - pytest $test_run1
+  - pytest tests/test_tool.py
