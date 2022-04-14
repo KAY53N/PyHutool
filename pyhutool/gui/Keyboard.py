@@ -6,7 +6,7 @@ import time
 from contextlib import contextmanager
 from pyhutool.gui.Const import _const
 import functools
-from pyhutool.gui import Mouse
+from . import Mouse
 
 if sys.platform.startswith("java"):
     raise NotImplementedError("Jython is not yet supported by PyHuTool.")

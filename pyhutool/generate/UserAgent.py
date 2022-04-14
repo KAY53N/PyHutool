@@ -7,7 +7,6 @@ from typing import Collection, TypeVar, Iterable, Union, Sequence, Literal, Dict
 import random as random_module
 import string
 from datetime import date as dtdate
-
 from dateutil.tz import tzutc
 
 T = TypeVar("T")

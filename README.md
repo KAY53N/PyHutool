@@ -23,3 +23,5 @@ Full documentation available at https://pyhutool.readthedocs.org
 | pyhutool.core        | 核心，包括文件处理、数据转换、日期、各种Util等               |
 | pyhutool.gui         | 自动化库，包含按键、鼠标、截图的操作等                     |
 | pyhutool.system         | 获取系统相关信息，如显示器数量，当前窗口标题，系统正在运行什么程序以及PID等 |
+| pyhutool.crypto         | 加密解密模块，提供对称、非对称和摘要算法封装 |
+

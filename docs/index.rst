@@ -26,6 +26,7 @@ Contents:
     core.rst
     gui.rst
     system.rst
+    crypto.rst
 
 This example drags the mouse in a square spiral shape in MS Paint (or any graphics drawing program):
 

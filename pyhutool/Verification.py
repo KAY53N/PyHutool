@@ -171,3 +171,4 @@ def isUnicode(text):
         return True
     else:
         return False
+

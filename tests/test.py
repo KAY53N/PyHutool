@@ -11,6 +11,7 @@ from pyhutool.system import Window
 from pyhutool.system import System
 
 from pyhutool.core import Date
+import imghdr
 
 
 
@@ -37,8 +38,8 @@ from pyhutool.core import Date
 # QRCode.createQrcode('test', 'qrcode.png')
 
 
-Clipboard.copy('hello world')
-Clipboard.paste()
+# Clipboard.copy('hello world')
+# Clipboard.paste()
 
 # xx = Core.Io.tail('log.log', 50)
 # for x in xx:
