@@ -1,6 +1,8 @@
 ============
-AES Control Functions
+Crypto Control Functions
 ============
+
+Encryption and decryption module related implementation
 
 AES Function
 =============================
