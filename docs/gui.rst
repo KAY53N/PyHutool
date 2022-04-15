@@ -48,7 +48,7 @@ Mouse Clicks Function
     >>> Mouse.leftClick(500, 500)
 
 
-The write() Function
+The write Function
 =============================
 The primary keyboard function is write(). This function will type the characters in the string that is passed. To add a delay interval in between pressing each character key, pass an int or float for the interval keyword argument.
 For example:
@@ -59,7 +59,7 @@ For example:
 
     >>> Keyboard.write('hello world')
 
-The press(), keyDown(), and keyUp() Functions
+The press, keyDown, and keyUp Functions
 =============================
 To press these keys, call the press() function and pass it a string from the pyhutool.KEYBOARD_KEYS such as enter, esc, f1
 For example:
@@ -72,7 +72,7 @@ For example:
     >>> Keyboard.keyUp('h')
     >>> Keyboard.press('enter')
 
-The hotkey() Function
+The hotkey Function
 =============================
 To make pressing hotkeys or keyboard shortcuts convenient, the hotkey() can be passed several key strings which will be pressed down in order, and then released in reverse order. This code:
 
@@ -83,7 +83,7 @@ To make pressing hotkeys or keyboard shortcuts convenient, the hotkey() can be p
     >>> Keyboard.hotkey('ctrl', 'shift', 'esc')
 
 
-The screenshot() Function
+The screenshot Function
 =============================
 Calling screenshot() will return an Image object (see the Pillow or PIL module documentation for details). Passing a string of a filename will save the screenshot to a file as well as return it as an Image object.
 
