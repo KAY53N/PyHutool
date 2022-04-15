@@ -77,34 +77,100 @@ Compare if two dates are the same day
 
 .. code:: python
 
-    >>> Date.isSameDay
+    >>> Date.isSameDay()
 
 Compare if two dates are the same month
 
 .. code:: python
 
-    >>> Date.isSameMonth
+    >>> Date.isSameMonth()
 
 Compare if two dates are the same week
 
 .. code:: python
 
-    >>> Date.isSameWeek
+    >>> Date.isSameWeek()
 
 Get the specified date year and quarter
 
 .. code:: python
 
-    >>> Date.getYearAndQuarter
+    >>> Date.getYearAndQuarter()
 
 Get the year and quarter within the specified date range and return
 
 .. code:: python
 
-    >>> Date.getYearAndQuarterInRange
+    >>> Date.getYearAndQuarterInRange()
 
 Return how long ago according to the time, such as: 1 second ago, 1 minute ago, 1 hour ago
 
 .. code:: python
 
-    >>> Date.getTimeBefore
+    >>> Date.getTimeBefore()
+
+
+Image Functions
+=============================
+
+zoom image
+
+.. code:: python
+
+    >>> Image.resizeImage()
+
+
+grayscale image
+
+.. code:: python
+
+    >>> Image.grayscaleImage()
+
+image binary
+
+.. code:: python
+
+    >>> Image.binaryImage()
+
+Linearly replace image color
+
+.. code:: python
+
+    >>> Image.replaceColor()
+
+
+Gaussian replacement replaces image color
+
+.. code:: python
+
+    >>> Image.replaceColorGaussian()
+
+mean replace image color
+
+.. code:: python
+
+    >>> Image.replaceColorMean()
+
+Image watermark
+
+.. code:: python
+
+    >>> Image.watermarkImage()
+
+Detect image type
+
+.. code:: python
+
+    >>> Image.detectImageType()
+
+Detect image MIME type
+
+.. code:: python
+
+    >>> Image.detectImageMIME()
+
+Identify the face in the picture and return the coordinates of the face
+
+.. code:: python
+
+    >>> Image.face_detect()

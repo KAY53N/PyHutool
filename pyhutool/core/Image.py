@@ -236,7 +236,7 @@ def test_exr(h, f):
 
 tests.append(test_exr)
 
-# 见图图片MIME类型
+# 检测图片MIME类型
 def detectImageMIME(image):
     """
     识别图片MIME类型
