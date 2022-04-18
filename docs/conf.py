@@ -32,6 +32,10 @@ release = '0.0.8'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+    'recommonmark',
+    'sphinx.ext.autodoc',
+    'sphinx.ext.napoleon',
+    'sphinx.ext.viewcode'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -50,10 +54,12 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 #
 html_theme = 'sphinx_rtd_theme'
 
+pygments_style = 'sphinx'
+
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-language = 'zh_CN'  # 设置新项目的语言与中文
+language = 'zh_CN'  # 设置新项目的语言与中文 ['en', 'zh_CN']
 locale_dirs = ['locales/']  # 设置本地化数据目录
