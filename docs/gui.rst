@@ -1,9 +1,9 @@
-============
+=====================
 Gui Control Functions
-============
+=====================
 
 The Screen and Mouse Position Function
-=============================
+======================================
 
 Locations on your screen are referred to by X and Y Cartesian coordinates. The X coordinate starts at 0 on the left side and increases going right. Unlike in mathematics, the Y coordinate starts at 0 on the top and increases going down.
 
@@ -36,7 +36,7 @@ For example:
 
 
 Mouse Clicks Function
-=============================
+=====================
 
 .. code:: python
 
@@ -49,7 +49,7 @@ Mouse Clicks Function
 
 
 The write Function
-=============================
+==================
 The primary keyboard function is write(). This function will type the characters in the string that is passed. To add a delay interval in between pressing each character key, pass an int or float for the interval keyword argument.
 For example:
 
@@ -60,7 +60,7 @@ For example:
     >>> Keyboard.write('hello world')
 
 The press, keyDown, and keyUp Functions
-=============================
+=======================================
 To press these keys, call the press() function and pass it a string from the pyhutool.KEYBOARD_KEYS such as enter, esc, f1
 For example:
 
@@ -73,7 +73,7 @@ For example:
     >>> Keyboard.press('enter')
 
 The hotkey Function
-=============================
+===================
 To make pressing hotkeys or keyboard shortcuts convenient, the hotkey() can be passed several key strings which will be pressed down in order, and then released in reverse order. This code:
 
 .. code:: python
@@ -84,7 +84,7 @@ To make pressing hotkeys or keyboard shortcuts convenient, the hotkey() can be p
 
 
 The screenshot Function
-=============================
+=======================
 Calling screenshot() will return an Image object (see the Pillow or PIL module documentation for details). Passing a string of a filename will save the screenshot to a file as well as return it as an Image object.
 
 .. code:: python
@@ -98,7 +98,7 @@ Calling screenshot() will return an Image object (see the Pillow or PIL module d
 
 
 The Locate Functions
-=============================
+====================
 Find coordinates in the screen based on the feature image
 
 .. code:: python

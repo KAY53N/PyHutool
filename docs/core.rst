@@ -1,9 +1,9 @@
-============
+======================
 Core Control Functions
-============
+======================
 
 Compress Functions
-=============================
+===================
 Compressed file related functions
 
 .. code:: python
@@ -15,7 +15,7 @@ Compressed file related functions
     >>> Compress.Zip.unzip_file('./zip.zip', '1.png', './1.png') # 解压缩文件内指定文件
 
 Convert Functions
-=============================
+=================
 Convert numbers to Chinese uppercase
 
 .. code:: python
@@ -59,7 +59,7 @@ Convert digital amounts to Chinese uppercase
 
 
 Date Functions
-=============================
+==============
 Calculate the age of a specified birthday in a certain year
 
 .. code:: python
@@ -111,7 +111,7 @@ Return how long ago according to the time, such as: 1 second ago, 1 minute ago, 
 
 
 Image Functions
-=============================
+===============
 
 zoom image
 
@@ -132,7 +132,7 @@ image binary
 
     >>> Image.binaryImage()
 
-Linearly replace image color
+Mean Color Replacement
 
 .. code:: python
 

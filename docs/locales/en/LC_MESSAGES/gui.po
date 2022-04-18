@@ -1,0 +1,109 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, kaysen
+# This file is distributed under the same license as the PyHutool package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyHutool \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-15 15:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../gui.rst:3
+msgid "Gui Control Functions"
+msgstr ""
+
+#: ../gui.rst:6
+msgid "The Screen and Mouse Position Function"
+msgstr ""
+
+#: ../gui.rst:8
+msgid ""
+"Locations on your screen are referred to by X and Y Cartesian "
+"coordinates. The X coordinate starts at 0 on the left side and increases "
+"going right. Unlike in mathematics, the Y coordinate starts at 0 on the "
+"top and increases going down."
+msgstr ""
+
+#: ../gui.rst:22
+msgid ""
+"The pixel at the top-left corner is at coordinates 0, 0. If your screen's"
+" resolution is 1920 x 1080, the pixel in the lower right corner will be "
+"1919, 1079 (since the coordinates begin at 0, not 1)."
+msgstr ""
+
+#: ../gui.rst:24
+msgid ""
+"The screen resolution size is returned by the ``size()`` function as a "
+"tuple of two integers. The current X and Y coordinates of the mouse "
+"cursor are returned by the ``position()`` function."
+msgstr ""
+
+#: ../gui.rst:26
+msgid "For example:"
+msgstr ""
+
+#: ../gui.rst:39
+msgid "Mouse Clicks Function"
+msgstr ""
+
+#: ../gui.rst:52
+msgid "The write Function"
+msgstr ""
+
+#: ../gui.rst:53
+msgid ""
+"The primary keyboard function is write(). This function will type the "
+"characters in the string that is passed. To add a delay interval in "
+"between pressing each character key, pass an int or float for the "
+"interval keyword argument. For example:"
+msgstr ""
+
+#: ../gui.rst:63
+msgid "The press, keyDown, and keyUp Functions"
+msgstr ""
+
+#: ../gui.rst:64
+msgid ""
+"To press these keys, call the press() function and pass it a string from "
+"the pyhutool.KEYBOARD_KEYS such as enter, esc, f1 For example:"
+msgstr ""
+
+#: ../gui.rst:76
+msgid "The hotkey Function"
+msgstr ""
+
+#: ../gui.rst:77
+msgid ""
+"To make pressing hotkeys or keyboard shortcuts convenient, the hotkey() "
+"can be passed several key strings which will be pressed down in order, "
+"and then released in reverse order. This code:"
+msgstr ""
+
+#: ../gui.rst:87
+msgid "The screenshot Function"
+msgstr ""
+
+#: ../gui.rst:88
+msgid ""
+"Calling screenshot() will return an Image object (see the Pillow or PIL "
+"module documentation for details). Passing a string of a filename will "
+"save the screenshot to a file as well as return it as an Image object."
+msgstr ""
+
+#: ../gui.rst:101
+msgid "The Locate Functions"
+msgstr ""
+
+#: ../gui.rst:102
+msgid "Find coordinates in the screen based on the feature image"
+msgstr ""
+

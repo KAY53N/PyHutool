@@ -227,14 +227,14 @@ tests.append(test_bmp)
 def test_webp(h, f):
     if h.startswith(b'RIFF') and h[8:12] == b'WEBP':
         return 'webp'
-
 tests.append(test_webp)
+
 
 def test_exr(h, f):
     if h.startswith(b'\x76\x2f\x31\x01'):
         return 'exr'
-
 tests.append(test_exr)
+
 
 # 检测图片MIME类型
 def detectImageMIME(image):
@@ -244,6 +244,7 @@ def detectImageMIME(image):
     :return:
     """
     return image.mimetype
+
 
 # 识别图片中的人脸函数
 def face_detect(image):

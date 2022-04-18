@@ -1,0 +1,67 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, kaysen
+# This file is distributed under the same license as the PyHutool package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyHutool \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-15 15:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../system.rst:3
+msgid "System Control Functions"
+msgstr ""
+
+#: ../system.rst:6
+msgid "Copy / Paste"
+msgstr ""
+
+#: ../system.rst:8
+msgid "Invoke the copy and paste functions of the system clipboard"
+msgstr ""
+
+#: ../system.rst:19
+msgid "Process Function"
+msgstr ""
+
+#: ../system.rst:30
+msgid "Window Function"
+msgstr ""
+
+#: ../system.rst:38
+msgid "System Function"
+msgstr ""
+
+#: ../system.rst:39
+msgid "Get the current window title"
+msgstr ""
+
+#: ../system.rst:46
+msgid "Get system information"
+msgstr ""
+
+#: ../system.rst:52
+msgid "Get the current screen resolution"
+msgstr ""
+
+#: ../system.rst:58
+msgid "Open terminal"
+msgstr ""
+
+#: ../system.rst:64
+msgid "Get the number of monitors .. code:: python"
+msgstr ""
+
+#: ../system.rst:69
+msgid "Check if the current input method is English"
+msgstr ""
+

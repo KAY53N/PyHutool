@@ -1,0 +1,144 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, kaysen
+# This file is distributed under the same license as the PyHutool package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyHutool \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-15 15:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../core.rst:3
+msgid "Core Control Functions"
+msgstr "Core Control Functions"
+
+#: ../core.rst:6
+msgid "Compress Functions"
+msgstr "Compress Functions"
+
+#: ../core.rst:7
+msgid "Compressed file related functions"
+msgstr "Compressed file related functions"
+
+#: ../core.rst:18
+msgid "Convert Functions"
+msgstr "Convert Functions"
+
+#: ../core.rst:19
+msgid "Convert numbers to Chinese uppercase"
+msgstr "Convert numbers to Chinese uppercase"
+
+#: ../core.rst:25
+msgid "type conversion"
+msgstr "type conversion"
+
+#: ../core.rst:31
+msgid "convert to string .. code:: python"
+msgstr "convert to string .. code:: python"
+
+#: ../core.rst:36
+msgid "convert byte to unit"
+msgstr "convert byte to unit"
+
+#: ../core.rst:42
+msgid "convert bytes to int"
+msgstr "convert bytes to int"
+
+#: ../core.rst:48
+msgid "Chinese capitalized amount converted into numbers"
+msgstr "Chinese capitalized amount converted into numbers"
+
+#: ../core.rst:54
+msgid "Convert digital amounts to Chinese uppercase"
+msgstr "Convert digital amounts to Chinese uppercase"
+
+#: ../core.rst:62
+msgid "Date Functions"
+msgstr "Date Functions"
+
+#: ../core.rst:63
+msgid "Calculate the age of a specified birthday in a certain year"
+msgstr "Calculate the age of a specified birthday in a certain year"
+
+#: ../core.rst:69
+msgid "Modify the start time of the current week for a given date"
+msgstr "Modify the start time of the current week for a given date"
+
+#: ../core.rst:76
+msgid "Compare if two dates are the same day"
+msgstr "Compare if two dates are the same day"
+
+#: ../core.rst:82
+msgid "Compare if two dates are the same month"
+msgstr "Compare if two dates are the same month"
+
+#: ../core.rst:88
+msgid "Compare if two dates are the same week"
+msgstr "Compare if two dates are the same week"
+
+#: ../core.rst:94
+msgid "Get the specified date year and quarter"
+msgstr "Get the specified date year and quarter"
+
+#: ../core.rst:100
+msgid "Get the year and quarter within the specified date range and return"
+msgstr "Get the year and quarter within the specified date range and return"
+
+#: ../core.rst:106
+msgid ""
+"Return how long ago according to the time, such as: 1 second ago, 1 minute ago, 1 hour ago"
+msgstr "Return how long ago according to the time, such as: 1 second ago, 1 minute ago, 1 hour ago"
+
+#: ../core.rst:114
+msgid "Image Functions"
+msgstr "Image Functions"
+
+#: ../core.rst:116
+msgid "zoom image"
+msgstr "zoom image"
+
+#: ../core.rst:123
+msgid "grayscale image"
+msgstr "grayscale image"
+
+#: ../core.rst:129
+msgid "image binary"
+msgstr "image binary"
+
+#: ../core.rst:135
+msgid "Mean Color Replacement"
+msgstr "Mean Color Replacement"
+
+#: ../core.rst:142
+msgid "Gaussian replacement replaces image color"
+msgstr "Gaussian replacement replaces image color"
+
+#: ../core.rst:148
+msgid "mean replace image color"
+msgstr "mean replace image color"
+
+#: ../core.rst:154
+msgid "Image watermark"
+msgstr "Image watermark"
+
+#: ../core.rst:160
+msgid "Detect image type"
+msgstr "Detect image type"
+
+#: ../core.rst:166
+msgid "Detect image MIME type"
+msgstr "Detect image MIME type"
+
+#: ../core.rst:172
+msgid "Identify the face in the picture and return the coordinates of the face"
+msgstr "Identify the face in the picture and return the coordinates of the face"
+

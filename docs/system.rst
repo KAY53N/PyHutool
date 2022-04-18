@@ -1,9 +1,9 @@
-============
+========================
 System Control Functions
-============
+========================
 
 Copy / Paste
-=============================
+============
 
 Invoke the copy and paste functions of the system clipboard
 
@@ -16,7 +16,7 @@ Invoke the copy and paste functions of the system clipboard
 
 
 Process Function
-=============================
+================
 
 .. code:: python
 
@@ -27,7 +27,7 @@ Process Function
     >>> Process.checkAppIsOpen("chrome")
 
 Window Function
-=============================
+===============
 .. code:: python
 
     >>> from pyhutool.system import Window
@@ -35,7 +35,7 @@ Window Function
     >>> Window.get_active_window_title()
 
 System Function
-=============================
+===============
 Get the current window title
 
 .. code:: python

@@ -1,0 +1,91 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, kaysen
+# This file is distributed under the same license as the PyHutool package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PyHutool \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-15 15:52+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../index.rst:20 ../index.rst:33
+msgid "Contents:"
+msgstr ""
+
+#: ../index.rst:4
+msgid "Welcome to PyHuTool's documentation!"
+msgstr ""
+
+#: ../index.rst:7
+msgid "The source code is available on: https://github.com/kaysen820/PyHuTool"
+msgstr ""
+
+#: ../index.rst:9
+msgid "PyHuTool has several features:"
+msgstr ""
+
+#: ../index.rst:11
+msgid "Moving the mouse and clicking in the windows of other applications."
+msgstr ""
+
+#: ../index.rst:12
+msgid "Sending keystrokes to applications (for example, to fill out forms)."
+msgstr ""
+
+#: ../index.rst:13
+msgid ""
+"Take screenshots, and given an image (for example, of a button or "
+"checkbox), and find it on the screen."
+msgstr ""
+
+#: ../index.rst:14
+msgid ""
+"Locate an application's window, and move, resize, maximize, minimize, or "
+"close it (Windows-only, currently)."
+msgstr ""
+
+#: ../index.rst:15
+msgid "Display alert and message boxes."
+msgstr ""
+
+#: ../index.rst:16
+msgid ""
+"Support calling the clipboard of the system to achieve copy and paste "
+"operations"
+msgstr ""
+
+#: ../index.rst:17
+msgid "Supports querying the process details of the current operating system"
+msgstr ""
+
+#: ../index.rst:31
+msgid ""
+"This example drags the mouse in a square spiral shape in MS Paint (or any"
+" graphics drawing program):"
+msgstr ""
+
+#: ../index.rst:40
+msgid "Indices and tables"
+msgstr ""
+
+#: ../index.rst:42
+msgid ":ref:`genindex`"
+msgstr ""
+
+#: ../index.rst:43
+msgid ":ref:`modindex`"
+msgstr ""
+
+#: ../index.rst:44
+msgid ":ref:`search`"
+msgstr ""
+
