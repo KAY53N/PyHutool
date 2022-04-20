@@ -6,15 +6,16 @@ Welcome to PyHutool's documentation!
 
 The source code is available on: https://github.com/kaysen820/PyHutool
 
-PyHutool has several features:
+Components:
 
-* Moving the mouse and clicking in the windows of other applications.
-* Sending keystrokes to applications (for example, to fill out forms).
-* Take screenshots, and given an image (for example, of a button or checkbox), and find it on the screen.
-* Locate an application's window, and move, resize, maximize, minimize, or close it (Windows-only, currently).
-* Display alert and message boxes.
-* Support calling the clipboard of the system to achieve copy and paste operations
-* Supports querying the process details of the current operating system
+================ ========================================================
+module           introduce the module
+================ ========================================================
+pyhutool.core    Including file processing, data conversion, dates, various tools, etc.
+pyhutool.gui     Automation library, including operations of buttons, mouse, screenshots, etc.
+pyhutool.system  Get system-related information, such as the number of monitors, the current window title, what program the system is running, and the PID, etc.
+pyhutool.crypto  Encryption and decryption module, providing symmetric, asymmetric and digest algorithm encapsulation
+================ ========================================================
 
 
 Contents:
