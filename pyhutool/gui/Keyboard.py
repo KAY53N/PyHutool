@@ -9,7 +9,7 @@ import functools
 from . import Mouse
 
 if sys.platform.startswith("java"):
-    raise NotImplementedError("Jython is not yet supported by PyHuTool.")
+    raise NotImplementedError("Jython is not yet supported by PyHutool.")
 elif sys.platform == "darwin":
     from . import Osx as platformModule
 elif sys.platform == "win32":
@@ -17,7 +17,7 @@ elif sys.platform == "win32":
 elif platform.system() == "Linux":
     from . import X11 as platformModule
 else:
-    raise NotImplementedError("Your platform (%s) is not supported by PyHuTool." % (platform.system()))
+    raise NotImplementedError("Your platform (%s) is not supported by PyHutool." % (platform.system()))
 
 if sys.version_info[0] == 2 or sys.version_info[0:2] in ((3, 1), (3, 2)):
     # Python 2 and 3.1 and 3.2 uses collections.Sequence
@@ -236,5 +236,5 @@ def openTerminal():
 def failSafeCheck():
     if FAILSAFE and tuple(Mouse.position()) in FAILSAFE_POINTS:
         raise Exception(
-            "PyHuTool fail-safe triggered from mouse moving to a corner of the screen. To disable this fail-safe, set PyHuTool.FAILSAFE to False. DISABLING FAIL-SAFE IS NOT RECOMMENDED."
+            "PyHutool fail-safe triggered from mouse moving to a corner of the screen. To disable this fail-safe, set PyHutool.FAILSAFE to False. DISABLING FAIL-SAFE IS NOT RECOMMENDED."
         )

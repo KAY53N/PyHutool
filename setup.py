@@ -18,7 +18,7 @@ with io.open("README.md", encoding="utf-8") as fileObj:
 setup(
     name='PyHutool',
     version=version,
-    url='https://github.com/kaysen820/PyHuTool',
+    url='https://github.com/kaysen820/PyHutool',
     author='kaysen',
     author_email='kaysen820@gmail.com',
     description='PyHutool lets Python control the mouse and keyboard, and other GUI automation tasks. For Windows, macOS, and Linux',

@@ -11,7 +11,7 @@ from ctypes import c_size_t, sizeof, c_wchar_p, get_errno, c_wchar
 HAS_DISPLAY = os.getenv("DISPLAY", False)
 
 EXCEPT_MSG = """
-    PyHuTool could not find a copy/paste mechanism for your system.
+    PyHutool could not find a copy/paste mechanism for your system.
 """
 
 PY2 = sys.version_info[0] == 2

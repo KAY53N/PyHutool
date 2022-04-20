@@ -1,4 +1,4 @@
-# PyHuTool
+# PyHutool
 <p align="center">
 	<a href="https://pyhutool.readthedocs.org"><img src="https://www.xujiantao.com/images/pyhutool-logo.png" width="45%"></a>
 </p>
@@ -10,7 +10,7 @@
 </p>
 
 
-PyHuTool draws lessons from Java's Hutool to reduce the learning cost of related APIs and improve work efficiency
+PyHutool draws lessons from Java's Hutool to reduce the learning cost of related APIs and improve work efficiency
 
 ## 📝文档 
 [📘中文文档](https://pyhutool.readthedocs.org)

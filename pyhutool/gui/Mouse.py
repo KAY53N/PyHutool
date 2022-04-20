@@ -60,7 +60,7 @@ try:
 except ImportError:
     def _couldNotImportPyScreeze(*unused_args, **unsed_kwargs):
         raise Exception(
-            "PyHuTool was unable to import pyscreeze. (This is likely because you're running a version of Python that Pillow (which pyscreeze depends on) doesn't support currently.) Please install this module to enable the function you tried to call."
+            "PyHutool was unable to import pyscreeze. (This is likely because you're running a version of Python that Pillow (which pyscreeze depends on) doesn't support currently.) Please install this module to enable the function you tried to call."
         )
 
     center = _couldNotImportPyScreeze

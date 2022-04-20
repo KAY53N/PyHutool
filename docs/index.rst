@@ -1,12 +1,12 @@
 
 
-Welcome to PyHuTool's documentation!
+Welcome to PyHutool's documentation!
 =====================================
 
 
-The source code is available on: https://github.com/kaysen820/PyHuTool
+The source code is available on: https://github.com/kaysen820/PyHutool
 
-PyHuTool has several features:
+PyHutool has several features:
 
 * Moving the mouse and clicking in the windows of other applications.
 * Sending keystrokes to applications (for example, to fill out forms).
