@@ -61,5 +61,4 @@ pygments_style = 'sphinx'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-language = 'zh_CN'  # 设置新项目的语言与中文 ['en', 'zh_CN']
-locale_dirs = ['locales/']  # 设置本地化数据目录
+language = 'en'  # 设置新项目的语言与中文 ['en', 'zh_CN']
