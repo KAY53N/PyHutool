@@ -132,7 +132,7 @@ image binary
 
     >>> Image.binaryImage()
 
-Mean Color Replacement
+Linear replacement color
 
 .. code:: python
 
@@ -145,7 +145,7 @@ Gaussian replacement replaces image color
 
     >>> Image.replaceColorGaussian()
 
-mean replace image color
+Mean replace image color
 
 .. code:: python
 
