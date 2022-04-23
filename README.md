@@ -14,11 +14,13 @@
 [![GitHub issues](https://img.shields.io/github/issues/KAY53N/PyHutool)](https://github.com/KAY53N/PyHutool/issues)
 [![GitHub stars](https://img.shields.io/github/stars/KAY53N/PyHutool)](https://github.com/KAY53N/PyHutool/stargazers)
 
-
 PyHutool draws lessons from Java's Hutool to reduce the learning cost of related APIs and improve work efficiency
 
 ## 📝文档 
-[📘中文文档](https://pyhutool.readthedocs.org)
+[📘中文文档](https://pyhutool.readthedocs.io/zh_CN/latest/index.html)
+Full documentation available at https://pyhutool.readthedocs.org
+<br />
+[📘Documentation](https://pyhutool.readthedocs.io/en/latest/index.html)
 Full documentation available at https://pyhutool.readthedocs.org
 
 
