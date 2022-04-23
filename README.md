@@ -19,9 +19,6 @@ PyHutool draws lessons from Java's Hutool to reduce the learning cost of related
 ## 📝文档 
 [📘中文文档](https://pyhutool.readthedocs.io/zh_CN/latest/index.html)
 Full documentation available at https://pyhutool.readthedocs.org
-<br />
-[📘Documentation](https://pyhutool.readthedocs.io/en/latest/index.html)
-Full documentation available at https://pyhutool.readthedocs.org
 
 
 ## 🛠️包含组件
