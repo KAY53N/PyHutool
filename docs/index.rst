@@ -29,7 +29,6 @@ Contents:
     system.rst
     crypto.rst
 
-This example drags the mouse in a square spiral shape in MS Paint (or any graphics drawing program):
 
 .. toctree::
    :maxdepth: 2
