@@ -9,14 +9,14 @@
 	👉 <a href="https://pyhutool.readthedocs.org">https://pyhutool.readthedocs.org</a> 👈
 </p>
 
-<div style="text-align:center">
+<p align="center">
 
 [![Documentation Status](https://readthedocs.org/projects/pyhutool/badge/?version=latest)](https://pyhutool.readthedocs.io/en/latest/?badge=latest)
 [![GitHub license](https://img.shields.io/github/license/KAY53N/PyHutool)](https://github.com/KAY53N/PyHutool/blob/main/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/KAY53N/PyHutool)](https://github.com/KAY53N/PyHutool/issues)
 [![GitHub stars](https://img.shields.io/github/stars/KAY53N/PyHutool)](https://github.com/KAY53N/PyHutool/stargazers)
 
-</div>
+</p>
 
 <br />
 
