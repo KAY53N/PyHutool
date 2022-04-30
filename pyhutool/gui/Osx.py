@@ -6,7 +6,7 @@ from pyhutool.gui.Const import _const
 try:
     import Quartz
 except:
-    assert False, "You must first install pyobjc-core and pyobjc: https://xxx.readthedocs.io/en/latest/install.html"
+    assert False, "You must first install pyobjc-core and pyobjc: https://pyhutool.readthedocs.io/en/latest/install.html"
 import AppKit
 
 if sys.platform !=  'darwin':

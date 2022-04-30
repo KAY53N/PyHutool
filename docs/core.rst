@@ -57,6 +57,18 @@ Convert digital amounts to Chinese uppercase
 
     >>> Convert.money2chinese('238,567.89')
 
+Underscore to CamelCase
+
+.. code:: python
+
+    >>> Convert.name_convert_to_camel('abc_def_ghi') # abcDefGhi
+
+Hump to underscore
+
+.. code:: python
+
+    >>> Convert.name_convert_to_snake('abcDefGhi') # abc_def_ghi
+
 
 Date Functions
 ==============
