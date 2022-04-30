@@ -14,6 +14,8 @@
 [![GitHub issues](https://img.shields.io/github/issues/KAY53N/PyHutool)](https://github.com/KAY53N/PyHutool/issues)
 [![GitHub stars](https://img.shields.io/github/stars/KAY53N/PyHutool)](https://github.com/KAY53N/PyHutool/stargazers)
 
+PyHutool是一个小而全的Java工具类库，借鉴Java的[Hutool](https://github.com/dromara/hutool)
+<br />
 PyHutool draws lessons from Java's Hutool to reduce the learning cost of related APIs and improve work efficiency
 
 ## 📝文档 
