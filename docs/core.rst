@@ -121,6 +121,12 @@ Return how long ago according to the time, such as: 1 second ago, 1 minute ago, 
 
     >>> Date.getTimeBefore()
 
+ISO format time
+.. code:: python
+
+    >>> Date.getISOTimestamp() # 2020-12-08T09:08:57.715Z
+
+
 
 Image Functions
 ===============

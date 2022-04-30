@@ -1,3 +1,4 @@
+import datetime
 from datetime import timedelta
 
 # 计算相对于dateToCompare的年龄，长用于计算指定生日在某年的年龄
@@ -87,3 +88,9 @@ def getNowDate():
     
 def getDateStrByFormat(date, format):
     return date.strftime(format)
+
+# ISO格式时间，如2020-12-08T09:08:57.715Z
+def getISOTimestamp():
+    now = datetime.datetime.utcnow()
+    t = now.isoformat("T", "milliseconds")
+    return t + "Z"
