@@ -16,46 +16,24 @@ Compressed file related functions
 
 Convert Functions
 =================
-Convert numbers to Chinese uppercase
-
-.. code:: python
-
-    >>> Convert.number2chinese('123456')
 
 type conversion
 
 .. code:: python
 
-    >>> Convert.convert('123', 'tuple')
+    >>> Convert.convert('123', 'tuple') # ('1', '2', '3')
 
 convert to string
 .. code:: python
 
-    >>> Convert.to_str(0x00)
-
-convert byte to unit
-
-.. code:: python
-
-    >>> Convert.byte2uint(b'\x01\x02\x03\x04')
+    >>> Convert.to_str(0x10) # '16'
 
 convert bytes to int
 
 .. code:: python
 
-    >>> Convert.bytes2int(bytes([1,2,3,4]))
+    >>> Convert.bytes2int(bytes([1,2,3,4])) # 16909060
 
-Chinese capitalized amount converted into numbers
-
-.. code:: python
-
-    >>> Convert.chinese2number('壹万叁仟贰佰捌拾壹元整')
-
-Convert digital amounts to Chinese uppercase
-
-.. code:: python
-
-    >>> Convert.money2chinese('238,567.89')
 
 Underscore to CamelCase
 
@@ -160,4 +138,4 @@ Identify the face in the picture and return the coordinates of the face
 
 .. code:: python
 
-    >>> Image.face_detect()
+    >>> Image.face_detect('me.jpg') # [[376 328 315 315]]

@@ -213,8 +213,9 @@ tests.append(test_exr)
 
 
 # 识别图片中的人脸函数
-def face_detect(image):
-    gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+def face_detect(imageName):
+    im = cv2.imread(imageName)
+    gray = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
     faces = face_cascade.detectMultiScale(gray, 1.3, 5)
     return faces
 
