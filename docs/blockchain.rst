@@ -1,5 +1,5 @@
 ================================
-Cryptocurrency Control Functions
+Blockchain Control Functions
 ================================
 
 OKX Exchange API Operation
@@ -9,7 +9,7 @@ The API operation package of OKX exchange, the related API can be used after ini
 
 .. code:: python
 
-    >>> from pyhutool.cryptocurrency.exchange.okx import restV5 as okx
+    >>> from pyhutool.blockchain.exchange.okx import restV5 as okx
     >>> OKX = okx.okxApiV5('api_key', 'secret_key', 'passphrase', test=1)
 
     >>> OKX.accountGetBalance() # get balance

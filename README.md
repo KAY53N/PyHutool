@@ -34,13 +34,13 @@ PyHutool的存在就是为了减少代码搜索成本，避免网络上参差不
 -------------------------------------------------------------------------------
 
 ## 🛠️包含组件
-| 模块                | 介绍                               |
-| -------------------|----------------------------------|
-| pyhutool.core        | 核心，包括文件处理、数据转换、日期、各种Util等        |
-| pyhutool.gui         | 自动化库，包含按键、鼠标、截图的操作等              |
-| pyhutool.system         | 获取系统相关信息，如显示器数量，当前窗口标题，系统运行的应用信息 |
-| pyhutool.crypto         | 加密解密模块，提供对称、非对称和摘要算法封装           |
-| pyhutool.cryptocurrency | 加密货币相关类库封装       |
+| 模块                    | 介绍                               |
+|-----------------------|----------------------------------|
+| pyhutool.core         | 核心，包括文件处理、数据转换、日期、各种Util等        |
+| pyhutool.gui          | 自动化库，包含按键、鼠标、截图的操作等              |
+| pyhutool.system       | 获取系统相关信息，如显示器数量，当前窗口标题，系统运行的应用信息 |
+| pyhutool.crypto       | 加密解密模块，提供对称、非对称和摘要算法封装           |
+| pyhutool.blockchain   | 区块链相关类库封装                        |
 
 ## 📝文档 
 [📘中文文档](https://pyhutool.readthedocs.io/zh_CN/latest/index.html) Full documentation available at https://pyhutool.readthedocs.io/zh_CN/latest/index.html

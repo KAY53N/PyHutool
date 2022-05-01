@@ -29,7 +29,7 @@ Contents:
     gui.rst
     system.rst
     crypto.rst
-    cryptocurrency.rst
+    blockchain.rst
 
 
 .. toctree::
