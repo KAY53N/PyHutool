@@ -29,10 +29,8 @@ For example:
 
     >>> from pyhutool.gui import Mouse
 
-    >>> Mouse.size()
-    (1920, 1080)
-    >>> Mouse.position()
-    (187, 567)
+    >>> Mouse.size() # Size(width=1440, height=900)
+    >>> Mouse.position() # Point(x=293, y=605)
 
 
 Mouse Clicks Function
@@ -41,7 +39,6 @@ Mouse Clicks Function
 .. code:: python
 
     >>> from pyhutool.gui import Mouse
-
     >>> Mouse.click(500, 500)
     >>> size = Mouse.size()
     >>> position = Mouse.position()
@@ -56,8 +53,7 @@ For example:
 .. code:: python
 
     >>> from pyhutool.gui import Keyboard
-
-    >>> Keyboard.write('hello world')
+    >>> Keyboard.typewrite('hello world', 0.2)
 
 The press, keyDown, and keyUp Functions
 =======================================
@@ -70,6 +66,7 @@ For example:
 
     >>> Keyboard.keyDown('h')
     >>> Keyboard.keyUp('h')
+
     >>> Keyboard.press('enter')
 
 The hotkey Function
@@ -79,7 +76,6 @@ To make pressing hotkeys or keyboard shortcuts convenient, the hotkey() can be p
 .. code:: python
 
     >>> from pyhutool.gui import Keyboard
-
     >>> Keyboard.hotkey('ctrl', 'shift', 'esc')
 
 
@@ -91,10 +87,10 @@ Calling screenshot() will return an Image object (see the Pillow or PIL module d
 
     >>> from pyhutool.gui import Screenshot
 
-    >>> im = Screenshot.screenshot('test.png')
-    >>> im2 = Screenshot.screenshot('test.png', region=(0,0, 300, 400))
-    >>> im = Screenshot.screenshot('test.png')
-    >>> im2 = Screenshot.screenshot('test.png', region=(0,0, 300, 400))
+    >>> Screenshot.screenshot('test.png')
+    >>> Screenshot.screenshot('test.png', region=(0,0, 300, 400))
+    >>> Screenshot.screenshot('test.png')
+    >>> Screenshot.screenshot('test.png', region=(0,0, 300, 400))
 
 
 The Locate Functions
@@ -104,5 +100,4 @@ Find coordinates in the screen based on the feature image
 .. code:: python
 
     >>> from pyhutool.gui import Screenshot
-
     >>> locate = Screenshot.locateOnScreen('img_1.png')

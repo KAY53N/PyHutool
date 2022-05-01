@@ -28,9 +28,9 @@ On macOS and Linux, you need to run ``python3``:
 
     ``python3 -m pip install pyhutool``
 
-If you are running El Capitan and have problems installing pyobjc try:
+If you are running El Capitan and have problems installing pyhutool try:
 
-    ``MACOSX_DEPLOYMENT_TARGET=10.11 pip install pyobjc``
+    ``MACOSX_DEPLOYMENT_TARGET=10.11 pip install pyhutool``
 
 Linux
 =====

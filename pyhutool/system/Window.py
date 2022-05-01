@@ -1,7 +1,7 @@
 import sys
 
 
-def get_window_title():
+def getWindowTitle():
     if sys.platform == 'win32':
         import win32gui
         return win32gui.GetWindowText(win32gui.GetForegroundWindow())
@@ -12,7 +12,7 @@ def get_window_title():
         raise NotImplementedError('platform not supported')
 
 
-def get_active_window_title():
+def getActiveWindowTitle():
     # 兼容win和linux、mac
     if sys.platform == 'win32':
         from win32gui import GetWindowText, GetForegroundWindow

@@ -151,12 +151,12 @@ def number2chinese(number):
     return number
 
 
-def name_convert_to_camel(name: str) -> str:
+def nameConvertToCamel(name: str) -> str:
     """下划线转驼峰(小驼峰)"""
     return re.sub(r'(_[a-z])', lambda x: x.group(1)[1].upper(), name)
 
 
-def name_convert_to_snake(name: str) -> str:
+def nameConvertToSnake(name: str) -> str:
     """驼峰转下划线"""
     if '_' not in name:
         name = re.sub(r'([a-z])([A-Z])', r'\1_\2', name)

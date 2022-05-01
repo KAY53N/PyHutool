@@ -61,13 +61,13 @@ Underscore to CamelCase
 
 .. code:: python
 
-    >>> Convert.name_convert_to_camel('abc_def_ghi') # abcDefGhi
+    >>> Convert.nameConvertToCamel('abc_def_ghi') # abcDefGhi
 
 Hump to underscore
 
 .. code:: python
 
-    >>> Convert.name_convert_to_snake('abcDefGhi') # abc_def_ghi
+    >>> Convert.nameConvertToSnake('abcDefGhi') # abc_def_ghi
 
 
 Date Functions
@@ -76,50 +76,33 @@ Calculate the age of a specified birthday in a certain year
 
 .. code:: python
 
-    >>> Date.getAge()
-
-Modify the start time of the current week for a given date
-
-.. code:: python
-
-    >>> Date.setStartDate()
+    >>> Date.getAgeByBirthday('1999-01-01') # 23
 
 
 Compare if two dates are the same day
 
 .. code:: python
 
-    >>> Date.isSameDay()
+    >>> Date.isSameDay('1999-01-01', '1999-01-02') # False
 
 Compare if two dates are the same month
 
 .. code:: python
 
-    >>> Date.isSameMonth()
+    >>> Date.isSameMonth('1999-02-01', '1999-01-02') # False
 
 Compare if two dates are the same week
 
 .. code:: python
 
-    >>> Date.isSameWeek()
+    >>> Date.isSameWeek('1999-02-01', '1999-02-02') # True
 
-Get the specified date year and quarter
 
-.. code:: python
-
-    >>> Date.getYearAndQuarter()
-
-Get the year and quarter within the specified date range and return
+Return how long ago according to the time, such as: 1 minute ago, 1 hour ago ...
 
 .. code:: python
 
-    >>> Date.getYearAndQuarterInRange()
-
-Return how long ago according to the time, such as: 1 second ago, 1 minute ago, 1 hour ago
-
-.. code:: python
-
-    >>> Date.getTimeBefore()
+    >>> Date.getTimeAgo(datetime.timestamp(datetime.now())-5000) # 1小时前
 
 ISO format time
 
@@ -128,65 +111,50 @@ ISO format time
     >>> Date.getISOTimestamp() # 2020-12-08T09:08:57.715Z
 
 
-
 Image Functions
 ===============
+
+Hexadecimal color to RGB
+
+.. code:: python
+
+    >>> Image.hex2rgb('#ECECEC') # (236, 236, 236)
+
+
+RGB to hexadecimal color
+
+.. code:: python
+
+    >>> Image.rgb2hex((236, 236, 236)) # #ececec
+
 
 zoom image
 
 .. code:: python
 
-    >>> Image.resizeImage()
+    >>> Image.resizeImage('source.png', 'target.png', (10, 10)) # Save as target.png after scaling
+    >>> Image.resizeImage('icon.png', size=(15, 15)) # Replace original image after scaling
 
 
-grayscale image
-
-.. code:: python
-
-    >>> Image.grayscaleImage()
-
-image binary
+replacement color
 
 .. code:: python
 
-    >>> Image.binaryImage()
+    >>> Image.replaceColor('icon2.png', '#ECECEC', '#1210FF') # replace image color
 
-Linear replacement color
-
-.. code:: python
-
-    >>> Image.replaceColor()
-
-
-Gaussian replacement replaces image color
-
-.. code:: python
-
-    >>> Image.replaceColorGaussian()
-
-Mean replace image color
-
-.. code:: python
-
-    >>> Image.replaceColorMean()
 
 Image watermark
 
 .. code:: python
 
-    >>> Image.watermarkImage()
+    >>> Image.watermarkImage('WechatIMG146.jpeg', 'icon2.png', 10, 10) # Add watermark to image
 
 Detect image type
 
 .. code:: python
 
-    >>> Image.detectImageType()
+    >>> Image.detectImageType('WechatIMG146.jpeg') # jpeg
 
-Detect image MIME type
-
-.. code:: python
-
-    >>> Image.detectImageMIME()
 
 Identify the face in the picture and return the coordinates of the face
 

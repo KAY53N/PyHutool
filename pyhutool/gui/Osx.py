@@ -1,7 +1,6 @@
 import time
 import sys
-from pyhutool.gui.Keyboard import isShiftCharacter
-from pyhutool.gui.Const import _const
+from .Const import _const
 
 try:
     import Quartz
@@ -398,6 +397,8 @@ def _dragTo(x, y, button):
         assert False, "button argument not in ('left', 'middle', 'right')"
     time.sleep(_const.DARWIN_CATCH_UP_TIME) # needed to allow OS time to catch up.
 
+def isShiftCharacter(character):
+    return character.isupper() or character in set('~!@#$%^&*()_+{}|:"<>?')
 
 def _moveTo(x, y):
     _sendMouseEvent(Quartz.kCGEventMouseMoved, x, y, 0)

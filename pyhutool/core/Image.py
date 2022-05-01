@@ -1,5 +1,6 @@
+import os
+import sys
 from os import PathLike
-
 from PIL import Image
 import cv2
 face_cascade=cv2.CascadeClassifier(cv2.data.haarcascades+'haarcascade_frontalface_alt.xml')
@@ -21,108 +22,83 @@ def showImage(image, title=None):
 
 
 # 缩放图片函数
-def resizeImage(image, size):
+def resizeImage(imageName, newImageName = None, size = None):
+    if imageName is None:
+        raise Exception('imageName is None')
+    if os.path.exists(imageName) is False:
+        raise Exception('imageName is not exists')
+    if size is None or type(size) != tuple:
+        raise Exception('size must be tuple')
+    if newImageName is None:
+        newImageName = imageName
+    image = Image.open(imageName)
+    im = image.resize(size)
+    im.save(newImageName)
+    image.close()
+    return True
+
+
+def hex2rgb(hex):
     """
-    缩放图片函数
-    :param image: 图片
-    :param size: 缩放大小
+    十六进制颜色转RGB
+    :param hex: 十六进制颜色
+    :return: RGB颜色
+    """
+    hex = hex.lstrip('#')
+    hlen = len(hex)
+    return tuple(int(hex[i:i+hlen//3], 16) for i in range(0, hlen, hlen//3))
+
+
+def rgb2hex(rgb):
+    """
+    RGB转16进制颜色
+    :param rgb: RGB颜色
+    :return: 16进制颜色
+    """
+    return '#%02x%02x%02x' % rgb
+
+
+def replaceColor(imageName, originColor, newColor):
+    """
+    图片颜色替换函数
+    :param imageName: 图片
+    :param originalColor: 原始颜色
+    :param newColor: 新颜色
     :return:
     """
-    return image.resize(size)
-
-def grayscaleImage(image):
-    """
-    图片灰度化函数
-    :param image: 图片
-    :return:
-    """
-    return image.convert('L')
-
-
-# 图片二值化函数
-def binaryImage(image, threshold=128):
-    """
-    图片二值化函数
-    :param image: 图片
-    :param threshold: 阈值
-    :return:
-    """
-    return image.convert('1', dither=Image.FLOYDSTEINBERG, palette=Image.ADAPTIVE, colors=1, threshold=threshold)
-
-
-# 图片转换为像素点函数
-def imageToPixels(image):
-    """
-    图片转换为像素点函数
-    :param image: 图片
-    :return:
-    """
-    return image.load()
-
-
-def replaceColor(image, original_color, new_color):
-    """
-    图片颜色替换函数，线性替换
-    :param image: 图片
-    :param original_color: 原始颜色
-    :param new_color: 新颜色
-    :return:
-    """
-    image = image.convert('RGB')
-    image_pixels = image.load()
+    if imageName is None:
+        raise Exception('imageName is None')
+    if os.path.exists(imageName) is False:
+        raise Exception('imageName is not exists')
+    if isinstance(originColor, str):
+        originColor = hex2rgb(originColor)
+    if isinstance(newColor, str):
+        newColor = hex2rgb(newColor)
+    im = Image.open(imageName)
+    image = im.convert('RGB')
+    imagePixels = image.load()
     for x in range(image.width):
         for y in range(image.height):
-            if image_pixels[x, y] == original_color:
-                image_pixels[x, y] = new_color
-    return image
-
-
-def replaceColorGaussian(image, original_color, new_color):
-    """
-    图片颜色替换函数，高斯替换
-    :param image: 图片
-    :param original_color: 原始颜色
-    :param new_color: 新颜色
-    :return:
-    """
-    image = image.convert('RGB')
-    image_pixels = image.load()
-    for x in range(image.width):
-        for y in range(image.height):
-            if image_pixels[x, y] == original_color:
-                image_pixels[x, y] = new_color
-    return image
-
-
-def replaceColorMean(image, original_color, new_color):
-    """
-    图片颜色替换函数, 均值替换
-    :param image: 图片
-    :param original_color: 原始颜色
-    :param new_color: 新颜色
-    :return:
-    """
-    image = image.convert('RGB')
-    image_pixels = image.load()
-    for x in range(image.width):
-        for y in range(image.height):
-            if image_pixels[x, y] == original_color:
-                image_pixels[x, y] = new_color
-    return image
+            if imagePixels[x, y] == originColor:
+                imagePixels[x, y] = newColor
+    image.save(imageName)
+    image.close()
+    im.close()
 
 
 # 图片水印函数
-def watermarkImage(image, watermark, x, y):
-    """
-    图片水印函数
-    :param image: 图片
-    :param watermark: 水印图片
-    :param x: x坐标
-    :param y: y坐标
-    :return:
-    """
+def watermarkImage(imageName, watermarkName, x, y):
+    if imageName is None or watermarkName is None:
+        raise Exception('imageName or watermarkName is None')
+    if os.path.exists(imageName) is False or os.path.exists(watermarkName) is False:
+        raise Exception('imageName or watermarkName is not exists')
+    image = Image.open(imageName)
+    watermark = Image.open(watermarkName)
     image.paste(watermark, (x, y))
-    return image
+    image.save(imageName)
+    image.close()
+    watermark.close()
+
 
 # 检测图片类型
 def detectImageType(file, h=None):
@@ -144,8 +120,8 @@ def detectImageType(file, h=None):
         if f: f.close()
     return None
 
-tests = []
 
+tests = []
 def test_jpeg(h, f):
     """JPEG data in JFIF or Exif format"""
     if h[6:10] in (b'JFIF', b'Exif'):
@@ -234,16 +210,6 @@ def test_exr(h, f):
     if h.startswith(b'\x76\x2f\x31\x01'):
         return 'exr'
 tests.append(test_exr)
-
-
-# 检测图片MIME类型
-def detectImageMIME(image):
-    """
-    识别图片MIME类型
-    :param image: 图片
-    :return:
-    """
-    return image.mimetype
 
 
 # 识别图片中的人脸函数

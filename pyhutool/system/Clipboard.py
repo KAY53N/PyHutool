@@ -74,8 +74,8 @@ def init_osx_pbcopy_clipboard():
     return copy_osx_pbcopy, paste_osx_pbcopy
 
 
-def init_osx_pyobjc_clipboard():
-    def copy_osx_pyobjc(text):
+def init_osx_pyhutool_clipboard():
+    def copy_osx_pyhutool(text):
         '''Copy string argument to clipboard'''
         text = _stringifyText(text) # Converts non-str values to str.
         newStr = Foundation.NSString.stringWithString_(text).nsstring()
@@ -84,13 +84,13 @@ def init_osx_pyobjc_clipboard():
         board.declareTypes_owner_([AppKit.NSStringPboardType], None)
         board.setData_forType_(newData, AppKit.NSStringPboardType)
 
-    def paste_osx_pyobjc():
+    def paste_osx_pyhutool():
         "Returns contents of clipboard"
         board = AppKit.NSPasteboard.generalPasteboard()
         content = board.stringForType_(AppKit.NSStringPboardType)
         return content
 
-    return copy_osx_pyobjc, paste_osx_pyobjc
+    return copy_osx_pyhutool, paste_osx_pyhutool
 
 
 def init_gtk_clipboard():
@@ -493,12 +493,12 @@ def determine_clipboard():
     # Setup for the MAC OS X platform:
     if os.name == 'mac' or platform.system() == 'Darwin':
         try:
-            import Foundation  # check if pyobjc is installed
+            import Foundation  # check if pyhutool is installed
             import AppKit
         except ImportError:
             return init_osx_pbcopy_clipboard()
         else:
-            return init_osx_pyobjc_clipboard()
+            return init_osx_pyhutool_clipboard()
 
     # Setup for the LINUX platform:
     if HAS_DISPLAY:
@@ -564,7 +564,7 @@ def set_clipboard(clipboard):
 
     clipboard_types = {
         "pbcopy": init_osx_pbcopy_clipboard,
-        "pyobjc": init_osx_pyobjc_clipboard,
+        "pyhutool": init_osx_pyhutool_clipboard,
         "gtk": init_gtk_clipboard,
         "qt": init_qt_clipboard,  # TODO - split this into 'qtpy', 'pyqt4', and 'pyqt5'
         "xclip": init_xclip_clipboard,
