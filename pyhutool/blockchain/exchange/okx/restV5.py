@@ -46,3 +46,46 @@ class okxApiV5(Client):
         if after:
             params['after'] = after
         return self._request_with_params(GET, '/api/v5/account/bills', params)
+
+    def accountGetBillsarchive(self, before='', after='', instType='', ccy='', type_=''):
+            params = {}
+            if instType:
+                params['instType'] = instType
+            if ccy:
+                params['ccy'] = ccy
+            if type_:
+                params['type'] = type_
+            if before:
+                params['before'] = before
+            if after:
+                params['after'] = after
+            return self._request_with_params(GET, '/api/v5/account/bills-archive', params)
+
+    def accountGetConfig(self):
+        return self._request_without_params(GET, '/api/v5/account/config')
+
+    def accountSetPositionMode(self, params: dict):
+        if not params:
+            params['posMode'] = 'long_short_mode'
+        else:
+            params = dict
+        return self._request_with_params(POST, '/api/v5/account/set-position-mode', params)
+
+    def accountSetLeverage(self, lever, mgnMode, instId=None, ccy=None, posSide=None):
+        params = {}
+        params['lever'] = lever
+        params['mgnMode'] = mgnMode
+        if instId:
+            params['instId'] = instId
+        if ccy:
+            params['ccy'] = instId
+        if posSide:
+            params['posSide'] = instId
+        return self._request_with_params(POST, '/api/v5/account/set-leverage', params)
+
+    def accountGetMaxSize(self, instId, tdMode='cross'):
+        params = {}
+        params['instId'] = instId
+        params['tdMode'] = tdMode
+        return self._request_with_params(GET, '/api/v5/account/max-size', params)
+
